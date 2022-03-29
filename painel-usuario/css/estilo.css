@@ -1,0 +1,161 @@
+/*Cabeçalho*/
+header{width: 100%; height: auto;}
+
+/*Navegação*/
+.nav_logo img{width: 160px; height: auto; margin-left: 150px;}
+
+.nav_socials{margin-right: 100px;}
+.nav_socials img{width: 50px; height: 50px; margin-right: 4px; margin-top: 5px;}
+.nav_socials .esconder{display:none;}
+
+#esconder_menu{display: none; height: auto; cursor: pointer; margin-left: 10px;}
+
+
+/*Conteúdo da Esquerda - Principal*/
+.content_left{width: 62%; height: auto; margin-left:2%;  margin-top: 2%; margin-bottom: 0%; float:left; }
+.content_left .nav{height: 250px}
+.content_left .top_nav{height: auto}
+.content_left img{width:90%; height: auto; margin: 2% 5%;}
+.content_left h1{padding: 1% 0%;}
+.content_left h3{padding: 1% 5%;}
+.content_left p{padding: 1% 5%;}
+.content_left .info{padding: 0% 5%; font-weight: bold; }
+
+.content{width: 62%; height: auto; margin-left:2%;  margin-top: 2%; margin-bottom: 2%; float:left; }
+.content .info{padding: 2% 5%; font-weight: bold; }
+.content .info_art{padding: 0% 5%; font-weight: bold;}
+.content .enderecos{margin-top: -30px;}
+.content p{margin: 0px 50px;}
+.content .top_order{padding-top: 3%;}
+.content .bottom_order{padding-bottom: 3%;}
+.content a{margin-left: 50px;}
+
+.content_conta{width: 60%; height: auto; margin: 5% 20%;}
+
+.content_left span{padding: 1% 2%;}
+.content_left .pag_views{width:100%; height: auto; margin: 0% 0%; padding: 1% 0% 5% 0%;}
+.content_left .pag_views h1{margin: 0% 5%; padding:1.2% 5%;}
+.content_left .post_views{width:90%; height: auto; margin: 0% 5%; padding: 1% 0% 5% 0%;}
+.content_left .post_views h1{margin: 0% 5%; padding:1.2% 5%;}
+.content_left .title_contato{margin: 0% 5%; padding:1.2% 0%;}
+
+.content_left .pesquisa_smart{display:none;}
+.content_left input[type=text]{width:70%; padding: 5% 5%; margin: 1% 10%;}
+.content_left input[type=password]{width:70%; padding: 5% 5%; margin: 1% 10%;}
+.content_left input[type=email]{width:70%; padding: 5% 5%; margin: 1% 10%;}
+.content_left textarea{width:70%; height: 230px; padding: 5% 5%; margin: 1% 10%;}
+.content_left button{width: 80%; padding: 5% 0%; margin: 1% 10%;}
+.content_left .responder_btn{padding: 2% 0%;}
+
+.content_left .form_contato{padding: 1.5% 5% !important;}
+
+.divisor1 input[type=text]{width:70%; padding: 1% 3%; margin: 1% 10%;}
+.divisor1 input[type=password]{width:70%; padding: 1% 3%; margin: 1% 10%;}
+.divisor1 input[type=email]{width:70%; padding: 1% 3%; margin: 1% 10%;}
+.divisor1 button{padding: 1% 3%; margin: 1% 10%;}
+.divisor1 label {margin: 1% 10%;}
+.endereco_link{margin-left: 0% !important;}
+
+/*Conteúdo da Direita - Principal*/
+.content_right{width: 25%; height: auto; float:left; margin-top: 3%; margin-left:5%; margin-right: 0%;}
+.content_right .divisor1 {width: 100%; height: auto; margi: 0%;}
+.content_right .divisor1 p{padding: 3% 10%; margin: 0% 3%;}
+.content_right .divisor1 p:hover{background-color: #222; color: #fff;}
+.content_right img{width:90%; height: auto;margin: 2% 5%;}
+.content_right h3{padding: 2% 5%; margin: 0% 5%;}
+.navigator a{display: block;}
+
+.content_right input[type=text]{width:70%; padding: 5% 5%; margin: 1% 10%;}
+.content_right button{width: 80%; padding: 5% 0%; margin: 1% 10%;}
+
+.content_right .contador{width: 80%; padding: 5% 0%; margin: 1% 10%;}
+
+/*Rodapé*/
+footer{width: 100%; height: auto;}
+footer section{width: 80%; height: auto; padding: 2% 10%;}
+
+/*Medias Queries - Design Responsivo*/
+@media(max-width: 1700px){
+	.nav_menu ul{margin-top: 18px;}
+}
+
+@media(max-width: 1205px){
+.content_left .nav{height: 230px}
+.content_left .top_nav{height: auto}
+}
+
+@media(max-width: 1100px){
+	.nav_menu ul{margin-top: 18px;}
+	.content_left .nav{height: 210px}
+	.content_left .nav p{font-size: 1.2em;}
+	.content_left .top_nav{height: auto}
+}
+
+@media(max-width: 850px){
+	.content_left .nav{height: 200px}
+	.content_left .nav p{font-size: 1em;}
+	.content_right .divisor1 p{font-size: 1em;}
+	.content_left .top_nav{height: auto}
+}
+@media(max-width: 780px){
+	.nav_logo img{width: 45%; height: auto;  margin:0% 25%;}
+	.nav_socials{ text-align:center; margin-right: 30%;}
+	.nav_socials img{width: 40px; height: 40px; margin-left: 0px; float:left; }
+	.nav_socials .esconder{display:inline-block;}
+	main .content_left{clear:both; width: 100%; margin:0%;}
+	.espaco_hide{margin-top: 0px !important;}
+	main .content_right{clear:both; width: 100%; margin:0%;}
+	main .content{clear:both; width: 100%; margin:0%;}
+	.content_left article h1{font-size: 1.2em;}
+	.content_left .pesquisa_smart{display:block; padding: 2% 0%;}
+	.content_left input[type=text]{width:70%; padding: 3% 5%; margin: 1% 10%;}
+	.content_left button{width: 80%; padding: 3% 0%; margin: 1% 10%;}
+	.nav_menu ul{margin-top: 18px;}
+	#esconder_menu{display: block;}
+	.navigator a{display:none;}
+}
+
+@media(max-width: 600px){
+	.nav_logo img{width: 40%; height: auto;margin:0% 30%;}
+	.nav_socials{margin-right:25%;}
+	.nav_socials img{width: 32px; height: 32px; margin-left: 0px;}
+	.content_left article h3{font-size: 0.9em;}
+	.content_left article h1{font-size: 1em;}
+	footer h3{font-size: 1em !important;}
+}
+
+@media(max-width: 500px){
+	.nav_logo img{width: 50%; height: auto;margin:0% 25%;}
+	.nav_socials{margin-right: 20%;}
+	.nav_socials img{width: 32px; height: 32px; margin-left: 0px;}
+	.nav_menu{height: auto;}	
+	.nav_menu li a{display:block; padding: 2% 0%; margin-top: 0px;}
+	.nav_menu li a:hover{color: #fff;}
+	.content_left article h3{font-size: 0.8em;}
+	.content_left article p{font-size: 0.8em;}
+}
+
+@media(max-width: 480px){
+.content_left .nav{height: 340px}
+.content_left .top_nav{height: auto}
+}
+
+@media(max-width: 430px){
+.content_left .nav{height: 320px}
+.content_left .top_nav{height: auto}
+}
+
+@media(max-width: 400px){
+	.nav_logo img{width: 50%; height: auto;  margin:0% 25%;}
+	.nav_socials{margin-right: 15%;}
+	.nav_socials img{width: 30px; height: 30px; margin-left: 0px;}
+}
+
+@media(max-width: 360px){
+	.nav_logo img{width: 60%; height: auto;  margin:0% 20%;}
+	.nav_socials{margin-right: 10%;}
+	.nav_socials img{width: 30px; height: 30px; margin-left: 0px;}
+	.content_left .nav{height: 320px}
+	.content_left .top_nav{height: auto}
+	main .content p{font-size: 1em;}
+}
