@@ -12,7 +12,7 @@ define('INCLUDE_PASTA', URL . 'temas/' . TEMA); //Incluir Tema com URL
 define('REQUIRE_PASTA', 'temas/' . TEMA); //Chama o tema para ser exibido.
 define('EMAILSITE', 'Willian_rafael@hotmail.com'); //E-mail da Empresa
 define('TELEFONESITE', '(44) 00000-0000'); //Telefone da Empresa
-define('AUTOR', 'Jeferson Souza'); //Autor do Sistema
+define('AUTOR', 'Willian Rafael'); //Autor do Sistema
 
 define('ENDERECO', 'Rua Paraíso, 0000, Bairro: Jardim Paraíso'); //Endereço do Cliente
 define('CEP', '02340-000'); //CEP do Cliente

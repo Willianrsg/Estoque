@@ -1,5 +1,5 @@
 <header>
-	<img src="img/icons/menu.png" title="Mostrar e Ocultar Menu de Navegação" alt="Mostrar e Ocultar Menu de Navegação" id="esconder_menu">
+	<img src="images/icons/menu.png" title="Mostrar e Ocultar Menu de Navegação" alt="Mostrar e Ocultar Menu de Navegação" id="esconder_menu">
 	<section class="bgcolor-dark nav_menu text-center">
 		<h1 class="fontzero">Navegação Por Menus</h1>
 		

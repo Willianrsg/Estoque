@@ -18,12 +18,15 @@ header{width: 100%; height: auto;}
 
 
 /*Conteúdo da Esquerda - Principal*/
-.content_left{width: 62%; height: auto; margin-left:5%;  margin-top: 2%; float:left; }
+.content_left{width: 90%; height: auto; margin: 1% 5%}
 .content_left img{width:90%; height: auto; margin: 2% 5%;}
 .content_left h1{padding: 1% 0%;}
 .content_left h3{padding: 1% 5%;}
 .content_left p{padding: 1% 5%;}
 .content_left .info{padding: 0% 5%; font-weight: bold;}
+
+.content_left article img{width: 25%; height: auto; margin: 0% 37.5%;}
+.content_left .extends{height: 650px;}
 
 .content_conta{width: 60%; height: auto; margin: 5% 20%;}
 
@@ -44,15 +47,6 @@ header{width: 100%; height: auto;}
 
 .content_left .form_contato{padding: 1.5% 5% !important;}
 
-/*Conteúdo da Direita - Principal*/
-.content_right{width: 25%; height: auto; float:left; margin-top: 3%; margin-left:2%; margin-right: 5%;}
-.content_right img{width:90%; height: auto;margin: 2% 5%;}
-.content_right h3{padding: 2% 5%; margin: 0% 5%;}
-
-.content_right input[type=text]{width:70%; padding: 5% 5%; margin: 1% 10%;}
-.content_right button{width: 80%; padding: 5% 0%; margin: 1% 10%;}
-
-.content_right .contador{width: 80%; padding: 5% 0%; margin: 1% 10%;}
 
 /*Rodapé*/
 footer{width: 100%; height: auto;}
