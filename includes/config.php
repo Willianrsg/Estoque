@@ -3,15 +3,15 @@
 date_default_timezone_set('America/Sao_Paulo');
 
 /*INFORMAÇÕES DO SITE*/
-define ('URL', 'localhost/cursos/controle_estoque');
+define ('URL', 'localhost/estoque');
 define('DESCRIPTION','Descrição do site');
 define('TITLE','Controle de Estoque');
 define('SITE_STATUS', 1); // 0 = Site Fora do Ar, 1 = Site Ativo e 2 = Site Manutenção
 define ('TEMA', 'estoque'); //Incluir o nome da pasta onde se encontra o tema.
 define('INCLUDE_PASTA', URL . 'temas/' . TEMA); //Incluir Tema com URL
 define('REQUIRE_PASTA', 'temas/' . TEMA); //Chama o tema para ser exibido.
-define('EMAILSITE', 'jefersonsouzasp@hotmail.com'); //E-mail da Empresa
-define('TELEFONESITE', '(11) 00000-0000'); //Telefone da Empresa
+define('EMAILSITE', 'Willian_rafael@hotmail.com'); //E-mail da Empresa
+define('TELEFONESITE', '(44) 00000-0000'); //Telefone da Empresa
 define('AUTOR', 'Jeferson Souza'); //Autor do Sistema
 
 define('ENDERECO', 'Rua Paraíso, 0000, Bairro: Jardim Paraíso'); //Endereço do Cliente

@@ -1,10 +1,10 @@
 
 # Configurando as Páginas de Erro
-ErrorDocument 404 http://localhost/cursos/Criando_Uma_Plataforma_Gestao_Sites/blog/errors/404
-ErrorDocument 403 http://localhost/cursos/Criando_Uma_Plataforma_Gestao_Sites/blog/errors/403
-ErrorDocument 400 http://localhost/cursos/Criando_Uma_Plataforma_Gestao_Sites/blog/errors/400
-ErrorDocument 401 http://localhost/cursos/Criando_Uma_Plataforma_Gestao_Sites/blog/errors/401
-ErrorDocument 500 http://localhost/cursos/Criando_Uma_Plataforma_Gestao_Sites/blog/errors/500
+ErrorDocument 404 http://localhost/estoque/errors/404
+ErrorDocument 403 http://localhost/estoque/errors/403
+ErrorDocument 400 http://localhost/estoque/errors/400
+ErrorDocument 401 http://localhost/estoque/errors/401
+ErrorDocument 500 http://localhost/estoque/errors/500
 
 # Esconder a Extensão
 RewriteEngine on
