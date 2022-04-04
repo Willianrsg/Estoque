@@ -1,3 +1,8 @@
+<?php 
+	session_start();
+	$_SESSION['usuario'] = 'Willian Rafael';
+	require "includes/config.php";
+?>
 <!doctype html>
 <html lang="pt-br">
 	<head> 
@@ -20,9 +25,11 @@
 			<div class="espaco-min pesquisa_smart"></div>
 			
 			<article class="bgcolor-white extends">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">Bem Vindo(a) Willian Rafael ao Sistema CONTROLE DE ESTOQUE</h1><!--Aula 5 colocar o TITLE-->
+				
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">Bem Vindo(a) 
+					<?= $_SESSION['usuario']?> ao Sistema <?= strtoupper(TITLE) ?> </h1>
 				<div class="espaco-min"></div>
-				<img src="images/logo.png" alt="Logo da Empresa" title="Logo da Empresa">
+				<img src="images/logo.jpeg" alt="Logo da Empresa" title="Logo da Empresa">
 				<div class="espaco-min"></div>
 			</article>
 			
