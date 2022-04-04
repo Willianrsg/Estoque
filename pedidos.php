@@ -34,7 +34,7 @@
 						<div class="espaco-normal"></div>
 					</div>
 					<div class="divisor2"> 
-						<h1 class="bgcolor-red-light color-white text-center">PEDIDOS</h1>	
+						<h1 class="bgcolor-red-light color-white text-center">PEDIDOS MATERIAL</h1>	
 						<img src="images/layout/Clientes.jpg" title="Imagem de Representação: Novo Pedido" alt="Imagem de Representação: Novo Pedido">
 						<p class="text-center link-bgcolor-dark-b"><a href="novo-pedido" class="color-white">Novo Pedido</a></p>
 						<div class="espaco-normal"></div>

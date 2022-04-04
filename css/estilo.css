@@ -24,10 +24,11 @@ header{width: 100%; height: auto;}
 .content_left article img{width: 25%; height: auto; margin: 0% 37.5%;}
 .content_left article h1{padding: 2% 2%;}
 .content_left .extends{height: 650px;}
-.content_left .more{height: 900px;}
+.content_left .more{height: 1150px;}
 .content_left .grand{height: 2100px;}
 .content_left .extends .divisor2 img{width: 50%; height: auto; margin: 0% 20%;}
 .content_left .extends .divisor2 p{padding: 2% 0%;}
+.content_left .extends .texto_margem{margin: 0% 5%; padding: 0.5% 1%;}
 
 .content_conta{width: 60%; height: auto; margin: 5% 20%;}
 
@@ -39,11 +40,16 @@ header{width: 100%; height: auto;}
 .content_left .title_contato{margin: 0% 5%; padding:1.2% 0%;}
 
 .content_left .pesquisa_smart{display:none;}
-.content_left input[type=text]{width:70%; padding: 5% 5%; margin: 1% 10%;}
-.content_left input[type=password]{width:70%; padding: 5% 5%; margin: 1% 10%;}
-.content_left input[type=email]{width:70%; padding: 5% 5%; margin: 1% 10%;}
-.content_left textarea{width:70%; height: 230px; padding: 5% 5%; margin: 1% 10%;}
-.content_left button{width: 80%; padding: 5% 0%; margin: 1% 10%;}
+.content_left .extends label{padding: 1% 2%; margin: 1% 10%; font-weight: 800;}
+.content_left .extends input[type=text]{width: 70%; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .extends input[type=file]{width:70%; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .extends input[type=password]{width:70%; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .extends input[type=email]{width:70%; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .extends input[type=number]{width:70%; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .extends input[type=date]{width:70%; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .extends textarea{width:70%; height: 230px; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .extends select{width:74%; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .extends button{padding: 1% 2%; margin: 1% 10%;}
 .content_left .responder_btn{padding: 2% 0%;}
 
 .content_left .form_contato{padding: 1.5% 5% !important;}
