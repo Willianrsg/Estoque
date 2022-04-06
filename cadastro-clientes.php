@@ -25,7 +25,7 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">CADASTRAR USUÁIO NO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">CADASTRAR CLIENTES NO SISTEMA <?= strtoupper(TITLE) ?></h1>
 
 				<div class="espaco-min"></div>
 
@@ -34,19 +34,35 @@
 					<label for="nome">Nome</label><br>
 					<input type="text" name="nome" required><br><br>
 
-					<label for="login">Login</label><br>
-					<input type="text" name="login" required><br><br>
+					<label for="cpf">CPF</label><br>
+					<input type="number" name="cpf" required><br><br>
 
-					<label for="Senha">Senha: </label><br>
-					<input type="password" name="senha" required><br><br>
+					<label for="telefone">Telefone </label><br>
+					<input type="number" name="telefone" required><br><br>
 
-					<label for="quantidade">Confirme sua senha:</label><br>
-					<input type="password" name="confirma_senha" required><br><br>
+					<label for="endereco">Endereço </label><br>
+					<input type="text" name="text" required><br><br>
 
+					<label for="cidade">Cidade</label><br>
+					<input type="text" name="Cidade" required><br><br>
+
+					<label for="estado">Estado</label><br>
+					<select>
+						<option value="Paraná">Paraná</option>
+						<option value="São Paulo">São Paulo</option>
+						<option value="Rio de Janeiro">Rio de Janeiro</option>
+						<option value="Santa Catarina">Santa Catarina</option>
+					</select>
+					
 					<button name="cadastro_usuario"class="link-bgcolor-green-dark-b color-white">Finalizar Cadastro</button>
 
 				</form>
 					
+					
+
+
+
+
 						
 
 				<div class="espaco-min"></div>

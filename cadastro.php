@@ -30,7 +30,7 @@
 					<div class="divisor2"> 
 						<h1 class="bgcolor-blue-celestial color-white text-center">CADASTRO DE USUÁRIOS</h1>	
 						<img src="images/layout/usuario.png" title="Imagem de Representação: Cadastro de usuário" alt="Imagem de Representação: Cadastro de usuário">
-						<p class="text-center link-bgcolor-dark-b"><a href="cadastro-usuarios" class="color-white">Novo Usuário</a></p>
+						<p class="text-center link-bgcolor-dark-b"><a href="cadastro-usuario" class="color-white">Novo Usuário</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 					<div class="divisor2"> 
