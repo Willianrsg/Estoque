@@ -39,7 +39,7 @@ define ('DB_CLIENTES','si_clientes');
 define ('DB_FORNECEDORES','si_fornecedores');
 define ('DB_REGISTROS','si_registros_acessos');
 define ('DB_PRODUTOS','es_produtos');
-define ('DB_CATEGORIA','si_categorias');
+define ('DB_CATEGORIA','tb_categorias');
 define ('DB_ENTRADA','si_entrada');
 define ('DB_SAIDA','si_saida');
 define ('DB_DEVOLUCAO','si_devolucao');
