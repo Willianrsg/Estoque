@@ -12,6 +12,43 @@
 		<link rel="stylesheet" href="css/framework.css">
 		<link rel="stylesheet" href="css/estilo.css">
 		
+		 <!-- Adicionando JQuery -->
+    	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+        </script>
+
+        <script type="text/javascript">
+			function formatar(mascara, documento) {
+				var i 		= documento.value.length;
+				var saida 	= mascara.substring(0,1);
+				var texto 	= mascara.substring(i);
+
+				if (texto.substring(0,1) != saida) {
+					documento.value += texto.substring(0,1);
+				}
+			}
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#cep").blur(function(e){
+					if($.trim($("#cep").val()) != ""){
+						$.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val(), function(){
+							if(resultadoCEP["resultado"]){
+								$("#rua").val(unescape(resultadoCEP["tipo_logradouro"])+": "+unescape(resultadoCEP["logradouro"]));
+								$("#bairro").val(unescape(resultadoCEP["bairro"]));
+								$("#cidade").val(unescape(resultadoCEP["cidade"]));
+								$("#uf").val(unescape(resultadoCEP["uf"]));
+							}else{
+								alert("N&atilde;o foi poss&iacute;vel encontrar o endere&ccedil;o");
+							}
+						});
+					}
+				})
+			});
+		</script>
+
 	</head>
 	
 	<body>
@@ -21,7 +58,7 @@
 	<main>
 		<section class="content_left">
 			<h1 class="fontzero">Conteúdo de Principal</h1>
-			
+
 			<?php
                 if (isset($_SESSION['msg'])):
                     echo $_SESSION['msg'];
@@ -32,68 +69,47 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">CADASTRAR FORNECEDORES NO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">CADASTRAR CLIENTES NO SISTEMA <?= strtoupper(TITLE) ?></h1>
 
 				<div class="espaco-min"></div>
 
-				<form method="post" enctype="multipart/form-data">
+				<form action="create-fornecedor.php" method="post">
 					
 					<label for="nome">Nome</label><br>
 					<input type="text" name="nome_fornecedor" required><br><br>
 
-					<label for="cnpj">CNPJ</label><br>
-					<input type="number" name="cnpj_fornecedor" required><br><br>
+					<label for="email">E-mail</label><br>
+					<input type="text" name="email_fornecedor" required><br><br>
 
 					<label for="telefone">Telefone </label><br>
-					<input type="number" name="telefone_fornecedor" required><br><br>
+					<input type="text" name="telefone_fornecedor" maxlength="14" onkeypress="formatar('##.#.####-####',this)" required><br><br>
 
-					<label for="endereco">Endereço </label><br>
-					<input type="text" name="endereco_fornecedor" required><br><br>
+					<label for="cnpj">CNPJ</label><br>
+					<input type="text" name="cnpj_fornecedor" maxlength="18" OnKeyPress="formatar('##.###.###/####-##',this)" required><br><br>
+
+					<label for="cep">CEP</label><br>
+					<input type="text" name="cep_fornecedor" maxlength="9" id="cep" onkeypress="formatar('#####-###',this)" required><br><br>
+					
+					<label for="endereco">Endereço</label><br>
+					<input type="text" name="rua_fornecedor" id="rua" required><br><br>
+
+					<label for="numero">Numero</label><br>
+					<input type="text" name="numero_fornecedor" id="numero" required><br><br>
+
+					<label for="bairro">Bairro</label><br>
+					<input type="text" name="bairro_fornecedor" id="bairro" required><br><br>
+
 
 					<label for="cidade">Cidade</label><br>
-					<input type="text" name="Cidade_fornecedor" required><br><br>
+					<input type="text" name="cidade_fornecedor" id="cidade" required><br><br>
 
 					<label for="estado">Estado</label><br>
-					<select id="estado" name="estado_fornecedor">
-    					<option value="AC">Acre</option>
-    					<option value="AL">Alagoas</option>
-    					<option value="AP">Amapá</option>
-    					<option value="AM">Amazonas</option>
-    					<option value="BA">Bahia</option>
-    					<option value="CE">Ceará</option>
-   					 	<option value="DF">Distrito Federal</option>
-    					<option value="ES">Espírito Santo</option>
-    					<option value="GO">Goiás</option>
-    					<option value="MA">Maranhão</option>
-    					<option value="MT">Mato Grosso</option>
-    					<option value="MS">Mato Grosso do Sul</option>
-    					<option value="MG">Minas Gerais</option>
-    					<option value="PA">Pará</option>
-    					<option value="PB">Paraíba</option>
-   					 	<option value="PR">Paraná</option>
-    					<option value="PE">Pernambuco</option>
-    					<option value="PI">Piauí</option>
-    					<option value="RJ">Rio de Janeiro</option>
-    					<option value="RN">Rio Grande do Norte</option>
-    					<option value="RS">Rio Grande do Sul</option>
-    					<option value="RO">Rondônia</option>
-    					<option value="RR">Roraima</option>
-    					<option value="SC">Santa Catarina</option>
-    					<option value="SP">São Paulo</option>
-    					<option value="SE">Sergipe</option>
-    					<option value="TO">Tocantins</option>
-    					<option value="EX">Estrangeiro</option>
-					</select>
-
-
-
-
-					<button name="cadastro_usuario"class="link-bgcolor-green-dark-b color-white">Finalizar Cadastro</button>
+					<input type="text" name="estado_fornecedor" id="uf" required><br><br>
+					
+					<button name="cadastro_fornecedor"class="link-bgcolor-green-dark-b color-white">Finalizar Cadastro</button>
 
 				</form>
 					
-						
-
 				<div class="espaco-min"></div>
 			</article>
 			
@@ -103,6 +119,9 @@
 	<div class="clear"></div>
 	</main>
 	
+		
+
+
 	<!-- Chama o rodapé da página-->
 	<?php require 'includes/footer.php';?>
 	</body>

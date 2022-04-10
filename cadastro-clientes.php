@@ -13,41 +13,42 @@
 		<link rel="stylesheet" href="css/estilo.css">
 		
 		 <!-- Adicionando JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous">
+        </script>
 
 
 		<script type="text/javascript">
-		function formatar(mascara, documento) {
-			var i 		= documento.value.length;
-			var saida 	= mascara.substring(0,1);
-			var texto 	= mascara.substring(i);
+			function formatar(mascara, documento) {
+				var i 		= documento.value.length;
+				var saida 	= mascara.substring(0,1);
+				var texto 	= mascara.substring(i);
 
-			if (texto.substring(0,1) != saida) {
-				documento.value += texto.substring(0,1);
-			}
-		}
-	</script>
-
-	<script type="text/javascript">
-$(document).ready(function(){
-	$("#cep").blur(function(e){
-		if($.trim($("#cep").val()) != ""){
-			$.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val(), function(){
-				if(resultadoCEP["resultado"]){
-					$("#rua").val(unescape(resultadoCEP["tipo_logradouro"])+": "+unescape(resultadoCEP["logradouro"]));
-					$("#bairro").val(unescape(resultadoCEP["bairro"]));
-					$("#cidade").val(unescape(resultadoCEP["cidade"]));
-					$("#uf").val(unescape(resultadoCEP["uf"]));
-				}else{
-					alert("N&atilde;o foi poss&iacute;vel encontrar o endere&ccedil;o");
+				if (texto.substring(0,1) != saida) {
+					documento.value += texto.substring(0,1);
 				}
+			}
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#cep").blur(function(e){
+					if($.trim($("#cep").val()) != ""){
+						$.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val(), function(){
+							if(resultadoCEP["resultado"]){
+								$("#rua").val(unescape(resultadoCEP["tipo_logradouro"])+": "+unescape(resultadoCEP["logradouro"]));
+								$("#bairro").val(unescape(resultadoCEP["bairro"]));
+								$("#cidade").val(unescape(resultadoCEP["cidade"]));
+								$("#uf").val(unescape(resultadoCEP["uf"]));
+							}else{
+								alert("N&atilde;o foi poss&iacute;vel encontrar o endere&ccedil;o");
+							}
+						});
+					}
+				})
 			});
-		}
-	})
-});
-</script>
+		</script>
 
 	</head>
 	
