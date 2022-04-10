@@ -12,6 +12,43 @@
 		<link rel="stylesheet" href="css/framework.css">
 		<link rel="stylesheet" href="css/estilo.css">
 		
+		 <!-- Adicionando JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+
+
+		<script type="text/javascript">
+		function formatar(mascara, documento) {
+			var i 		= documento.value.length;
+			var saida 	= mascara.substring(0,1);
+			var texto 	= mascara.substring(i);
+
+			if (texto.substring(0,1) != saida) {
+				documento.value += texto.substring(0,1);
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+$(document).ready(function(){
+	$("#cep").blur(function(e){
+		if($.trim($("#cep").val()) != ""){
+			$.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val(), function(){
+				if(resultadoCEP["resultado"]){
+					$("#rua").val(unescape(resultadoCEP["tipo_logradouro"])+": "+unescape(resultadoCEP["logradouro"]));
+					$("#bairro").val(unescape(resultadoCEP["bairro"]));
+					$("#cidade").val(unescape(resultadoCEP["cidade"]));
+					$("#uf").val(unescape(resultadoCEP["uf"]));
+				}else{
+					alert("N&atilde;o foi poss&iacute;vel encontrar o endere&ccedil;o");
+				}
+			});
+		}
+	})
+});
+</script>
+
 	</head>
 	
 	<body>
@@ -21,6 +58,13 @@
 	<main>
 		<section class="content_left">
 			<h1 class="fontzero">Conteúdo de Principal</h1>
+
+			<?php
+                if (isset($_SESSION['msg'])):
+                    echo $_SESSION['msg'];
+                    session_unset();
+                endif;
+            ?>
 			
 			<div class="espaco-min"></div>
 			
@@ -29,42 +73,44 @@
 
 				<div class="espaco-min"></div>
 
-				<form method="post" enctype="multipart/form-data">
+				<form action="create-cliente.php" method="post">
 					
 					<label for="nome">Nome</label><br>
-					<input type="text" name="nome" required><br><br>
+					<input type="text" name="nome_cliente" required><br><br>
 
-					<label for="cpf">CPF</label><br>
-					<input type="number" name="cpf" required><br><br>
+					<label for="email">E-mail</label><br>
+					<input type="text" name="email_cliente" required><br><br>
 
-					<label for="telefone">Telefone </label><br>
-					<input type="number" name="telefone" required><br><br>
+					<label for="cep">CEP</label><br>
+					<input type="text" name="cep_cliente" maxlength="9" id="cep" onkeypress="formatar('#####-###',this)" required><br><br>
+					
+					<label for="endereco">Endereço</label><br>
+					<input type="text" name="rua_cliente" id="rua" required><br><br>
 
-					<label for="endereco">Endereço </label><br>
-					<input type="text" name="text" required><br><br>
+					<label for="numero">Numero</label><br>
+					<input type="text" name="numero_cliente" id="numero" required><br><br>
+
+					<label for="bairro">Bairro</label><br>
+					<input type="text" name="bairro_cliente" id="bairro" required><br><br>
+
 
 					<label for="cidade">Cidade</label><br>
-					<input type="text" name="Cidade" required><br><br>
+					<input type="text" name="cidade_cliente" id="cidade" required><br><br>
 
 					<label for="estado">Estado</label><br>
-					<select>
-						<option value="Paraná">Paraná</option>
-						<option value="São Paulo">São Paulo</option>
-						<option value="Rio de Janeiro">Rio de Janeiro</option>
-						<option value="Santa Catarina">Santa Catarina</option>
-					</select>
+					<input type="text" name="estado_cliente" id="uf" required><br><br>
+
+					<label for="cpf">CPF</label><br>
+					<input type="text" name="cpf_cliente" maxlength="14" OnKeyPress="formatar('###.###.###-##',this)" required><br><br>
+
+					<label for="telefone">Telefone </label><br>
+					<input type="text" name="telefone_cliente" maxlength="14" onkeypress="formatar('##.#.####-####',this)" required><br><br>
+
 					
 					<button name="cadastro_usuario"class="link-bgcolor-green-dark-b color-white">Finalizar Cadastro</button>
 
 				</form>
 					
-					
-
-
-
-
-						
-
 				<div class="espaco-min"></div>
 			</article>
 			
@@ -74,6 +120,9 @@
 	<div class="clear"></div>
 	</main>
 	
+		
+
+
 	<!-- Chama o rodapé da página-->
 	<?php require 'includes/footer.php';?>
 	</body>
