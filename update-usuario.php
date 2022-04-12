@@ -21,17 +21,13 @@ $acesso             = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_NUMBER_I
         $nivel          = filter_input(INPUT_POST, 'nivel');
     endif;
 
-
-
-
-
 $queryUpdate = $link->query("update tb_usuario set nome_usuario ='$nome_usuario', login_usuario ='$login_usuario', senha_usuario='$senha_usuario', nivel='$nivel' where id='$id'");
 $affected_rows = mysqli_affected_rows($link);
     
 if($affected_rows > 0):
-    //echo '<p class="alert-ok color-white">Usuário alterado com sucesso</p>';
+    echo '<script>alert("Usuário alterado com sucesso!")</script>';
     echo '<script>window.location="editar-usuarios"</script>';
 else:
-    //echo '<p class="alert-error color-white">Não foi possível alterar o usuário, pois ocorreu um erro.</p>';
+    echo '<script>alert("Não foi possível alterar o usuário, pois ocorreu um erro.")</script>';
     echo '<script>window.location="altera-usuario"</script>';
 endif;
