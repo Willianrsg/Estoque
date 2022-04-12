@@ -12,7 +12,7 @@
 		<title>Sistema Estoque</title>
 		<link rel="stylesheet" href="css/framework.css">
 		<link rel="stylesheet" href="css/estilo.css">
-
+		<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 		

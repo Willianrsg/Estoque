@@ -12,9 +12,12 @@
 		<title>Sistema Estoque</title>
 		<link rel="stylesheet" href="css/framework.css">
 		<link rel="stylesheet" href="css/estilo.css">
+
 		<link type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+		
 		
 	</head>
 	
@@ -29,9 +32,9 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">GERENCIAR EDIÇÃO DO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">GERENCIAR PESQUISA NO SISTEMA <?= strtoupper(TITLE) ?></h1>
 				<div class="espaco-min"></div>
-				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do produto que deseja editar</h3>
+				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do produto que deseja pesquisar</h3>
 				<form method="post">
 					<input type="text" name="pesquisa" autocomplete="on" id="pesquisa" placeholder="Digite o nome do usuário para edição..."><br>
 					<button value="buscar" name="buscar" class="bgcolor-green-dark color-white">Buscar Produto</button>
@@ -42,7 +45,7 @@
 						//CAPTURA O RETORNO DO ARQUIVO.PHP
 						$.getJSON('retornaProdutos.php', function(data){
 							var cliente = [];
-
+ 
 							//ARMAZENA NA ARRAY CAPTURANDO SOMENTE O NOME DO CLIENTE
 							$(data).each(function(key, value){
 								cliente.push(value.nome_produto);
@@ -74,23 +77,28 @@
 				<div class="divisor bgcolor-white-dark color-dark info_dados">
 
 					<h3 class="bgcolor-dark-full font-text-light-extra text-center font-weight-medium color-red-light space-letter">Informações do Produto:</h3>
+<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Produto: <b><?= $mostra['nome_produto']?></b> </p>
 
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Produto: <b><?= $mostra['nome_produto']?></b> </p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Preço: R$ <b><?= number_format($mostra['preco_produto'],2,',','.')?></b> <a href="alterar-preco.php?ref=<?= $mostra['id_produto']?>" class="color-white link-bgcolor-blue-c">Alterar Preço</a></p>
 
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Estoque: <b><?= $mostra['qtde_produto']?> unidades</b> </p>
+ 
 					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Descrição: <b><?= $mostra['descricao_produto']?></b> </p>
 					
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Preço: R$ <b><?= number_format($mostra['preco_produto'],2,',','.')?></b> </p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Código de barra: <b><?= $mostra['codigo_barra']?></b> </p>
+
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Fabricante: <b><?= $mostra['fabricante_produto']?></b> </p>
+
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Validade: <b><?= $mostra['validade_produto']?></b> </p>
 
 					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_produto']))?></b></p>
 
-					<p class="font-text-light-extra text-center font-weight-medium color-red-light space-letter text-left"><a href="alterar-produto.php?ref=<?= $mostra['id_produto']?>" class="color-white link-bgcolor-blue-b">Alterar Dados</a></p>
-
-					<?php 
+					<?php  
 
 					endforeach;
 
 					endif;
-					?>
+					?> 
 
 					<div class="espaco-min"></div> 
 				</div>

@@ -63,7 +63,7 @@
 					</select>
 
 					<label for="codigo-barra">Código de Barra do Produto</label><br>
-					<input type="number" name="codigo_barra" required><br><br>
+					<input type="text" name="codigo_barra" maxlength="12" minlength="12" required><br><br>
 
 					<label for="fabricante">Fabricante do Produto</label><br>
 					<input type="text" name="fabricante_produto" required><br><br>
