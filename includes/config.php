@@ -34,7 +34,7 @@ define('MAILSENDER','seuemaildeenvio');
 define('MAILPORT', 000);
 
 /*DEFINIR TABELAS*/
-define ('DB_USUARIOS','si_usuarios');
+define ('DB_USUARIOS','tb_usuario');
 define ('DB_CLIENTES','si_clientes');
 define ('DB_FORNECEDORES','si_fornecedores');
 define ('DB_REGISTROS','si_registros_acessos');

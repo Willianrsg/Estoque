@@ -29,8 +29,8 @@ header{width: 100%; height: auto;}
 .content_left .extends .divisor2 img{width: 50%; height: auto; margin: 0% 20%;}
 .content_left .extends .divisor2 p{padding: 2% 0%;}
 .content_left .extends .texto_margem{margin: 0% 5%; padding: 0.5% 1%;}
-.content_left .extends .info_dados{margin: 0% 10%;}
-.content_left .extends #pesquisa{width: 74%; padding: 1% 2%; margin: 1% 10%; background-color: #eee;}
+.content_left .info_dados{margin: 0% 10%;}
+.content_left #pesquisar{width: 70%; padding: 1% 1%; margin: 1% 10%; background-color: #eee;}
 
 .content_conta{width: 60%; height: auto; margin: 5% 20%;}
 

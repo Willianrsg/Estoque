@@ -1,6 +1,7 @@
 <?php 
 	session_start();
 	$_SESSION['usuario'] = 'Willian Rafael';
+	require "includes/conexao2.php";
 	require "includes/config.php";
 ?>
 <!doctype html>
@@ -17,30 +18,7 @@
             crossorigin="anonymous"></script>
 		<!--Validação de senha-->
 					
-					<script type="text/javascript">
-						function validar(){
-							var senha = formuser.senha_usuario.value;
-							var confirma_senha = formuser.confirma_senha.value;
-
-							if(senha == "" || senha.length <= 6){
-								alert('Preencha o campo senha com no mínimo 6 caracteres');
-								formuser.senha_usuario.focus();
-								return false;
-							}
-
-							if(confirma_senha == "" || confirma_senha.length <= 6){
-								alert('Preencha o campo confirma senha com no mínimo 6 caracteres');
-								formuser.confirma_senha.focus();
-								return false;
-							}
-
-							if(senha != confirma_senha){
-								alert('Senhas diferentes');
-								formuser.confirma_senha.focus();
-								return false;
-							}
-						}
-					</script>
+					
 		
 	</head>
 	
@@ -62,41 +40,46 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">CADASTRAR USUÁIO NO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">EDITAR DADOS DO USUÁIO NO SISTEMA <?= strtoupper(TITLE) ?></h1>
 
 				<div class="espaco-min"></div>
 
-				<form action="create-usuario.php" method="post" name="formuser">
+				<?php
+
+					$id = filter_input(INPUT_GET, 'ref');
+					$_SESSION['id'] = $id;
+					$consulta = $pdo->prepare("SELECT * FROM ".DB_USUARIOS." WHERE id = :id ORDER BY id DESC LIMIT 1");
+					$consulta -> bindValue(':id', $id);
+					$consulta -> execute();
+
+					foreach($consulta as $mostra):
+						$_SESSION['mostra'] = $mostra;
+					endforeach;
+				?>
+
+				<form action="update-usuario.php" method="post" name="formuser">
 					
 					<label for="nome">Nome</label><br>
-					<input type="text" name="nome_usuario" required><br><br>
+					<input type="text" name="nome_usuario" value="<?= $mostra['nome_usuario'] ?>" required><br><br>
 
 					<label for="login">Login</label><br>
-					<input type="text" name="login_usuario" required><br><br>
+					<input type="text" name="login_usuario" value="<?= $mostra['login_usuario'] ?>" required><br><br>
 
 					<label for="Senha">Senha: </label><br>
-					<input type="password" name="senha_usuario" required><br><br>
-
-					<label for="quantidade">Confirme sua senha:</label><br>
-					<input type="password" name="confirma_senha" required><br><br>
+					<input type="password" name="senha_usuario" value="<?= $mostra['senha_usuario'] ?>"><br><br>
 
 					<label for="categoria">Nível de Acesso</label><br>
 					<select name="nivel" required>
+						<option value="0">Selecione Novo Nivel ao Usuário</option>
 						<option value="1">Usuário Administrativo</option>
 						<option value="2">Usuário Estoquista</option>
 						<option value="9">Administrador</option>
 						<option value="10">Super Administrador</option>
 					</select><br><br>
 
-					<button name="cadastro_usuario"class="link-bgcolor-green-dark-b color-white">Finalizar Cadastro</button>
-
-
-					
-
+					<button name="update-usuario"class="link-bgcolor-green-dark-b color-white">Alterar Cadastro</button>
 				</form>
-					
-						
-
+				
 				<div class="espaco-min"></div>
 			</article>
 			

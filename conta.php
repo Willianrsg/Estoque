@@ -36,5 +36,6 @@
 	
 	<!-- Chama o rodapé da página-->
 	<?php require 'includes/footer.php';?>
+	<script type="js/jquery.js"></script>
 	</body>
 </html>

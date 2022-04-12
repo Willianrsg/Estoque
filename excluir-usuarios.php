@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	$_SESSION['usuario'] = 'Willian Rafael';
-	require "includes/conexao2.php";
+	require "includes/conexao.php";
 	require "includes/config.php";
 ?>
 <!doctype html>
@@ -29,11 +29,11 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">GERENCIAR EDIÇÃO DO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">GERENCIAR EXCLUSÃO DO SISTEMA <?= strtoupper(TITLE) ?></h1>
 				<div class="espaco-min"></div>
-				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do usuário que deseja editar</h3>
+				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do usuário que deseja excluir</h3>
 				<form method="post">
-					<input type="text" name="pesquisa" autocomplete="on" id="pesquisa" placeholder="Digite o nome do usuário para edição..."><br>
+					<input type="text" name="pesquisa" size="20" autocomplete="on" id="pesquisa" placeholder="Digite o nome do usuário para exclusão..."><br>
 					<button value="buscar" name="buscar" class="bgcolor-green-dark color-white">Buscar Usuário</button>
 
 					<script type="text/javascript">
@@ -59,11 +59,11 @@
 				<?php
 
 				if(isset($_POST['buscar'])):
-					$usuario = filter_input(INPUT_POST, 'pesquisa');
+					$usuario = filter_input(INPUT_GET, 'pesquisa');
 
-					$consulta = $pdo->prepare("SELECT * FROM tb_usuario WHERE nome_usuario = :user");
-					$consulta -> bindValue(':user',$usuario);
-					$consulta->execute();
+					$consulta = $link->query_select("SELECT * FROM tb_usuario WHERE nome_usuario = '$nome_usuario'");
+					/*$consulta -> bindValue(':user',$usuario);*/
+					/*$consulta->execute();*/
 
 					foreach($consulta as $mostra):
 
@@ -72,20 +72,12 @@
 
 
 				<div class="divisor bgcolor-white-dark color-dark info_dados">
-
 					<h3 class="bgcolor-dark-full font-text-light-extra text-center font-weight-medium color-red-light space-letter">Informações do Usuário:</h3>
-
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Usuário: <b><?= $mostra['nome_usuario']?></b> </p>
-
-					<?php if($mostra['status_usuario'] == 1):?>
-						<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Status: <b>Ativo</b></p>
-					<?php else: ?>
-						<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Status: <b>Inativo</b></p>
-					<?php endif; ?>
-
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_usuario']))?></b></p>
-
-					<p class="font-text-light-extra text-center font-weight-medium color-red-light space-letter text-left"><a href="alterar-usuario.php?ref=<?= $mostra['id']?>" class="color-white link-bgcolor-blue-b">Alterar Dados</a></p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Usuário: <?= $mostra['nome_usuario']?> </p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">E-mail: <?= $mostra['email_usuario']?></p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Status: <?= $mostra['status_usuario']?></p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Data de Cadastro: <?= $mostra['cadastro_usuario']?></p>
+					<p class="font-text-light-extra text-center font-weight-medium color-red-light space-letter text-left"><a href="deletar-usuario?ref=<?= $mostra['id']?>" class="color-white link-bgcolor-red-dark-b">Excluir Usuário</a></p>
 
 					<?php 
 
@@ -108,6 +100,5 @@
 	
 	<!-- Chama o rodapé da página-->
 	<?php require 'includes/footer.php';?>
-	<script type="js/jquery.js"></script>
 	</body>
 </html>
