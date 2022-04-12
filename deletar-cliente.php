@@ -13,10 +13,10 @@
 
 	if($deletar):
 		echo '<script>alert("Cliente deletado com sucesso!")</script>';
-    	echo '<script>window.location="excluir-usuarios"</script>';
+    	echo '<script>window.location="excluir-cliente"</script>';
 	else:
 		echo '<script>alert("Não foi possivel deletar o cliente, pois ocorreu um erro!")</script>';
-    	echo '<script>window.location="excluir-usuarios"</script>';
+    	echo '<script>window.location="excluir-cliente"</script>';
 	endif;
 
 ?>
