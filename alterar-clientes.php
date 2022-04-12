@@ -122,7 +122,7 @@
 					<input type="text" name="telefone_cliente" maxlength="14" onkeypress="formatar('##.#.####-####',this)" value="<?= $mostra['telefone_cliente'] ?>" required><br><br>
 
 					
-					<button name="update-cliente"class="link-bgcolor-green-dark-b color-white">Finalizar Cadastro</button>
+					<button name="update-cliente"class="link-bgcolor-green-dark-b color-white">Alterar Cadastro</button>
 
 				</form>
 					
