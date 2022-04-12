@@ -29,23 +29,23 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">GERENCIAR EXCLUSÃO DO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">GERENCIAR EDIÇÃO DO SISTEMA <?= strtoupper(TITLE) ?></h1>
 				<div class="espaco-min"></div>
-				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do usuário que deseja excluir</h3>
-				<form method="post">
-					<input type="text" name="pesquisa" size="20" autocomplete="on" id="pesquisa" placeholder="Digite o nome do usuário para exclusão..."><br>
-					<button value="buscar" name="buscar" class="bgcolor-green-dark color-white">Buscar Usuário</button>
+				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do cliente que deseja editar</h3>
+				<form method="post" >
+					<input type="text" name="pesquisa" autocomplete="on" id="pesquisa" placeholder="Digite o nome do usuário para edição..."><br>
+					<button value="buscar" name="buscar" class="bgcolor-green-dark color-white">Buscar Cliente</button>
 
 					<script type="text/javascript">
 					$(document).ready(function(){
 
 						//CAPTURA O RETORNO DO ARQUIVO.PHP
-						$.getJSON('retornaUsuarios.php', function(data){
+						$.getJSON('retornaCliente.php', function(data){
 							var cliente = [];
 
 							//ARMAZENA NA ARRAY CAPTURANDO SOMENTE O NOME DO CLIENTE
 							$(data).each(function(key, value){
-								cliente.push(value.nome_usuario);
+								cliente.push(value.nome_cliente);
 							});
 
 							// CHAMO O AUTO COMPLETE DO JQUERY UI SETANDO O ID DO INPUT, ARRAY COM OS DADOS E O MINIMO DE CARACTERES PARA DISPARAR O AUTOCOMPLETE
@@ -61,7 +61,7 @@
 				if(isset($_POST['buscar'])):
 					$usuario = filter_input(INPUT_POST, 'pesquisa');
 
-					$consulta = $pdo->prepare("SELECT * FROM tb_usuario WHERE nome_usuario = :user");
+					$consulta = $pdo->prepare("SELECT * FROM tb_cliente WHERE nome_cliente = :user");
 					$consulta -> bindValue(':user',$usuario);
 					$consulta->execute();
 
@@ -69,24 +69,25 @@
 
 				?>
 				
-
-
 				<div class="divisor bgcolor-white-dark color-dark info_dados">
-					<h3 class="bgcolor-dark-full font-text-light-extra text-center font-weight-medium color-red-light space-letter">Informações do Usuário:</h3>
 
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Usuário: <b><?= $mostra['nome_usuario']?></b> </p>
+					<h3 class="bgcolor-dark-full font-text-light-extra text-center font-weight-medium color-red-light space-letter">Informações do Cliente:</h3>
 
-					<?php if($mostra['status_usuario'] == 1):?>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Cliente: <b><?= $mostra['nome_cliente']?></b> </p>
+
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">E-mail: <b><?= $mostra['email_cliente']?></b> </p>
+
+					<?php if($mostra['status_cliente'] == 1):?>
 						<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Status: <b>Ativo</b></p>
 					<?php else: ?>
 						<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Status: <b>Inativo</b></p>
 					<?php endif; ?>
 
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_usuario']))?></b></p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_cliente']))?></b></p>
 
-					<p class="font-text-light-extra text-center font-weight-medium color-red-light space-letter text-left"><a href="deletar-usuarios?ref=<?= $mostra['id']?>" class="color-white link-bgcolor-red-dark-b">Excluir Usuário</a></p>
+					<p class="font-text-light-extra text-center font-weight-medium color-red-light space-letter text-left"><a href="deletar-cliente?ref=<?= $mostra['id_cliente']?>" class="color-white link-bgcolor-red-dark-b">Excluir Usuário</a></p>
 
-					<?php  
+					<?php 
 
 					endforeach;
 
@@ -107,5 +108,6 @@
 	
 	<!-- Chama o rodapé da página-->
 	<?php require 'includes/footer.php';?>
+	<script type="js/jquery.js"></script>
 	</body>
 </html>
