@@ -56,8 +56,14 @@ header{width: 100%; height: auto;}
 
 .content_left .form_contato{padding: 1.5% 5% !important;}
 
+/*Entrada de Estoque*/
+.content_left .estoque_input {width:70% !important; padding: 1% 5% !important; margin: 1% 0% 1% 10%; background-color: #eee;}
+.content_left .input_table_estoque {padding: 1% 2% !important; margin: 1% 10%; background-color: #333 !important; width: 80% !important;}
 .content_left table{border: 80%; margin: 1% 10%;}
-
+.content_left th{padding: 1% 0%;}
+.content_left .td_maior{width: 45%;}
+.content_left .td_menor{width: 16%;}
+.content_left th, .content_left td, .content_left th{border: 1px solid #333;}
 
 /*Rodapé*/
 footer{width: 100%; height: auto;}

@@ -40,9 +40,9 @@ define ('DB_FORNECEDORES','tb_fornecedor');
 define ('DB_REGISTROS','si_registros_acessos');
 define ('DB_PRODUTOS','es_produto');
 define ('DB_CATEGORIA','tb_categorias');
-define ('DB_ENTRADA','si_entrada');
-define ('DB_SAIDA','si_saida');
-define ('DB_DEVOLUCAO','si_devolucao');
+define ('DB_ENTRADA','tb_entrada');
+define ('DB_SAIDA','tb_saida');
+define ('DB_DEVOLUCAO','tb_devolucao');
 define ('DB_ORDEM_SERVICO','si_ordem_servico');
 define ('DB_PEDIDO_MATERIAL','si_pedido_material');
 
