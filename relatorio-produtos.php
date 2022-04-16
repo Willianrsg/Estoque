@@ -42,25 +42,25 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">RELATÓRIO DE CLIENTES NO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">RELATÓRIO DE PRODUTO NO SISTEMA <?= strtoupper(TITLE) ?></h1>
 
 				<div class="espaco-min"></div>
 
-				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do cliente que deseja</h3>
+				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do produto desejado</h3>
 				<form method="post" >
 					<input type="text" name="pesquisa" autocomplete="on" id="pesquisa" placeholder="Digite o nome do usuário para edição..."><br>
-					<button value="buscar" name="buscar" class="bgcolor-green-dark color-white">Buscar Cliente</button>
+					<button value="buscar" name="buscar" class="bgcolor-green-dark color-white">Buscar Produto</button>
 
 					<script type="text/javascript">
 					$(document).ready(function(){
 
 						//CAPTURA O RETORNO DO ARQUIVO.PHP
-						$.getJSON('retornaCliente.php', function(data){
+						$.getJSON('retornaProdutos.php', function(data){
 							var cliente = [];
 
 							//ARMAZENA NA ARRAY CAPTURANDO SOMENTE O NOME DO CLIENTE
 							$(data).each(function(key, value){
-								cliente.push(value.nome_cliente);
+								cliente.push(value.nome_produto);
 							});
 
 							// CHAMO O AUTO COMPLETE DO JQUERY UI SETANDO O ID DO INPUT, ARRAY COM OS DADOS E O MINIMO DE CARACTERES PARA DISPARAR O AUTOCOMPLETE
@@ -70,13 +70,13 @@
 				</script>
 
 				</form>	
-
+ 
 				<?php
 
 				if(isset($_POST['buscar'])):
 					$usuario = filter_input(INPUT_POST, 'pesquisa');
 
-					$consulta = $pdo->prepare("SELECT * FROM tb_cliente WHERE nome_cliente = :user");
+					$consulta = $pdo->prepare("SELECT * FROM es_produto WHERE nome_produto = :user");
 					$consulta -> bindValue(':user',$usuario);
 					$consulta->execute();
 
@@ -84,23 +84,21 @@
 
 				?>
 				
+
+
 				<div class="divisor bgcolor-white-dark color-dark info_dados">
 
-					<h3 class="bgcolor-dark-full font-text-light-extra text-center font-weight-medium color-red-light space-letter">Informações do Cliente:</h3>
+					<h3 class="bgcolor-dark-full font-text-light-extra text-center font-weight-medium color-red-light space-letter">Informações do Produto:</h3>
 
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Cliente: <b><?= $mostra['nome_cliente']?></b> </p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Produto: <b><?= $mostra['nome_produto']?></b> </p>
 
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">E-mail: <b><?= $mostra['email_cliente']?></b> </p>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Descrição: <b><?= $mostra['descricao_produto']?></b> </p>
+					
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Preço: R$ <b><?= number_format($mostra['preco_produto'],2,',','.')?></b> </p>
 
-					<?php if($mostra['status_cliente'] == 1):?>
-						<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Status: <b>Ativo</b></p>
-					<?php else: ?>
-						<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Status: <b>Inativo</b></p>
-					<?php endif; ?>
+					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_produto']))?></b></p>
 
-					<p class="font-text-light-extra text-center font-weight-medium color-blue-dark space-letter text-left">Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_cliente']))?></b></p>
-
-					<p class="font-text-light-extra text-center font-weight-medium color-red-light space-letter text-left"><a href="imprimir-relatorio-cliente.php?ref=<?= $mostra['id_cliente']?>" class="color-white link-bgcolor-blue-b" target="_blank">Imprimir Relatório</a></p>
+					<p class="font-text-light-extra text-center font-weight-medium color-red-light space-letter text-left"><a href="imprimir-relatorio-produto.php?ref=<?= $mostra['id_produto']?>" class="color-white link-bgcolor-blue-b" target="_blank">Imprimir Relatório</a></p>
 
 					<?php 
 
@@ -125,4 +123,4 @@
 	<?php require 'includes/footer.php';?>
 	<script type="js/jquery.js"></script>
 	</body>
-</html>
+</html> 

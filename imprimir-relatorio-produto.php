@@ -24,7 +24,7 @@
 		
 	</head>
 	
-	<body onload="window.print()">
+	<body onload="window.print()"> 
 
 	<main>
 		<section class="content_left">
@@ -48,30 +48,30 @@
 				
 					$cliente = filter_input(INPUT_GET, 'ref');
 
-					$consulta = $pdo->prepare("SELECT * FROM tb_cliente WHERE id_cliente = :user");
+					$consulta = $pdo->prepare("SELECT * FROM es_produto WHERE id_produto = :user");
 					$consulta -> bindValue(':user',$cliente);
 					$consulta->execute();
 
 					foreach($consulta as $mostra):
 
 				?>
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">RELATÓRIO DO CLIENTE <?= strtoupper($mostra['nome_cliente']) ?> NO SISTEMA</h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">RELATÓRIO DO PRODUTO <?= strtoupper($mostra['nome_produto']) ?> NO SISTEMA</h1>
 				<div class="espaco-min"></div>
 				<div class="divisor color-dark info_dados">
 
-					CPF: <b><?= $mostra['cpf_cliente']?></b><br>				
-					E-mail: <b><?= $mostra['email_cliente']?></b><br>
-					Telefone: <b><?= $mostra['telefone_cliente']?></b><br>
-					Endereço: <b><?= $mostra['endereco_cliente']?></b><br>
-					CEP: <b><?= $mostra['cep_cliente']?></b><br>
-					Cidade/UF: <b><?= $mostra['cidade_cliente']?>/<?= $mostra['estado_cliente']?></b><br>
-					<?php if($mostra['status_cliente'] == 1):?>
+					Produto: <b><?= $mostra['nome_produto']?></b><br>				
+					Preço: <b><?= $mostra['preco_produto']?></b><br>
+					Estoque: <b><?= $mostra['qtde_produto']?> UN</b><br>
+					Código de Barra: <b><?= $mostra['codigo_barra']?></b><br>
+					Fabricante: <b><?= $mostra['fabricante_produto']?></b><br>
+					Validade: <b><?= date('d/m/Y', strtotime($mostra['validade_produto']))?></b><br>
+					<?php if($mostra['status_produto'] == 1):?>
 						Status: <b>Ativo</b><br>
 					<?php else: ?>
 						Status: <b>Inativo</b><br>
 					<?php endif; ?>
 
-					Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_cliente']))?></b><br>
+					Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_produto']))?></b><br>
 
 					
 
