@@ -11,8 +11,7 @@
 		<title>Sistema Estoque</title>
 		<link rel="stylesheet" href="css/framework.css">
 		<link rel="stylesheet" href="css/estilo.css">
-		
-	</head>
+		</head>
 	
 	<body>
 	<!-- Chama o cabeçalho da página-->
@@ -51,7 +50,7 @@
 					<div class="divisor2"> 
 						<h1 class="bgcolor-blue-celestial color-white text-center">RELATÓRIO DE PREÇOS</h1>	
 						<img src="images/layout/usuario.png" title="Imagem de Representação: Relatório de Preços" alt="Imagem de Representação: Relatório de Preços">
-						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-precos" class="color-white">Nova Consulta</a></p>
+						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-precos" class="color-white" target="_blank">Nova Consulta</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 
@@ -72,7 +71,7 @@
 					<div class="divisor2"> 
 						<h1 class="bgcolor-red-light color-white text-center">RELATÓROIO ESTOQUE</h1>	
 						<img src="images/layout/Clientes.jpg" title="Imagem de Representação: Relatório Estoque" alt="Imagem de Representação: Relatório de Produtos por Estoque">
-						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-estoque" class="color-white">Nova Consulta</a></p>
+						<p class="text-center link-bgcolor-dark-b"><a href="imprimir-relatorio-estoque" class="color-white" target="_blank">Nova Consulta</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 						
