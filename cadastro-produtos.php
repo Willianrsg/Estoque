@@ -65,8 +65,22 @@
 					<label for="codigo-barra">Código de Barra do Produto</label><br>
 					<input type="text" name="codigo_barra" maxlength="12" minlength="12" required><br><br>
 
-					<label for="fabricante">Fabricante do Produto</label><br>
-					<input type="text" name="fabricante_produto" required><br><br>
+					<label for="fabricante">Fabricante do Produto<a href="cadastro-fornecedor" class="link-bgcolor-blue-dark-b color-white texto_margem">Novo Fornecedor</a></label><br>
+					<select name="fabricante_produto" required>
+					
+						<?php
+										
+							$consultar = "SELECT * FROM tb_fornecedor ORDER BY nome_fornecedor ASC";
+							$resultado = $link->query($consultar);
+
+							while ($dados = $resultado->fetch_assoc()) {
+							echo "<option value=".$dados['nome_fornecedor'].">".$dados['nome_fornecedor']."</option>";
+
+							}
+						?>	
+					</select>
+
+					<!--<input type="text" name="fabricante_produto" required><br><br>-->
 
 					<label for="validade">Validade do Produto</label><br>
 					<input type="date" name="validade_produto" required><br><br>

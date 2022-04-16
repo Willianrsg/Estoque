@@ -26,7 +26,7 @@ define('NIVEL_OP', 5);  //Nível Operador de Estoque do sistema
 define('NIVEL_ADM', 9);  //Nível Administrador
 define('NIVEL_SUP', 10); //Nível Super Admin
 
-/*SERVIDOR DE E-MAIL*/
+/*SERVIDOR DE E-MAIL*/  
 define('MAILUSERNAME','seuemail');
 define('MAILPASSWORD','senhadeacesso');
 define('MAILSMTP','seusmtp');

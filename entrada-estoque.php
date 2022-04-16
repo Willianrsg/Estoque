@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-		//Adicionando linha na tabela
+		<!--Adicionando linha na tabela-->
 		<script type="text/javascript">
 			//Adicionar novas linhas a tabela
 			$(function(){
@@ -58,7 +58,7 @@
 			});
 		</script>
 
-		//Removendo linha da tabela
+		<!--Removendo linha da tabela-->
 		<script type="text/javascript">
 			$(function(){
 				RemoveTableRow = function(handler){
@@ -157,9 +157,9 @@
 
 								<td class="td_menor"><input type="number" name="quantidade[]" value="1" class="color-white font-text-light-extra input_table_estoque" required></td>
 
-								<td class="td_menor"><input type="text" name="medida[]" value="UN" class="color-white font-text-light-extra input_table_estoque" required></td>
+								<td class="td_menor"><input type="text" name="medidas[]" value="UN" class="color-white font-text-light-extra input_table_estoque" required></td>
 
-								<td class="td_menor"><input type="date" name="validade[]" class="color-white font-text-light-extra input_table_estoque" required></td>
+								<td class="td_menor"><input type="date" name="data_validade[]" class="color-white font-text-light-extra input_table_estoque" required></td>
 
 
 								<td><p class="text-center"><a href="#" class="link-bgcolor-red-dark color-white font-text-light-extra" onclick="RemoveTableRow(this)">Exclui</a></p></td>
@@ -190,34 +190,74 @@
 				 		$data_validade 	= $_POST['data_validade'];
 
 						$sessao 		= $_SESSION['usuario'];
-						$data_cadastro 	= date(Y-m-d);
+						$data_cadastro 	= date('Y-m-d');
 
 						$nota_fiscal 	= filter_input(INPUT_POST, 'nota_fiscal');
 						$codigo 		= filter_input(INPUT_POST, 'codigo');
 						$valor_nf 		= filter_input(INPUT_POST, 'valor_nf');
+						$valor_nf	    = str_replace(',','.', str_replace('.','',$valor_nf));
 						$fornecedor 	= filter_input(INPUT_POST, 'fornecedor');
-
-
-						$consulta = $pdo->prepare("SELECT FROM ".DB_PRODUTOS."WHERE nome_produto = :nome");
-						$consulta -> bindValue(':nome', $produtos);
-						$consulta -> execute();
-
-						foreach($consulta as $mostra):
-						endforeach;
-
-						$quantidade_estoque = strip_tags($mostra['qtde_produto']);
-						$quantidade_soma = $quantidade_estoque + $quantidade;
 
 						if(empty($codigo) || empty($valor_nf) || empty($fornecedor) || empty($nota_fiscal) || empty($produtos) || empty($quantidade) || empty($medidas) || empty($validade)):
 
-								echo '<p class="alert-erro color-white">Preencha todos os campos do formulario</p>';
+							echo '<p class="alert-erro color-white">Preencha todos os campos do formulario</p>';
 						else:
-							$array  = array($produtos[0], $quantidade[0], $validade[0], $medidas[0]);
+							$array  = array($produtos[0], $quantidade[0], $data_validade[0], $medidas[0], $produto_id[0], $quantidade_estoque[0], $quantidade_soma[0]);
 
 							for($i = 0; $i < count($quantidade); $i++):
-								$inseri = $pdo->prepare("INSERT INTO ".DB_ENTRADA." () VALUES ()");
+									$consulta = $pdo->prepare("SELECT * FROM ".DB_PRODUTOS." WHERE nome_produto = '$produtos[$i]'");
+									$consulta -> execute();
+									var_dump($consulta);
+
+									foreach($consulta as $mostra):
+									endforeach;
+
+									$produto_id = strip_tags($mostra['id_produto']);
+									$quantidade_estoque = strip_tags($mostra['qtde_produto']);
+
+									$inseri = $pdo->prepare("INSERT INTO ".DB_ENTRADA." (
+										entrada_produto_id,
+										entrada_quantidade,
+										entrada_medidas,
+										entrada_validade,
+										entrada_nf,
+										entrada_codigo,
+										entrada_fornecedor,
+										entrada_valor_nf,
+										entrada_sessao
+									) VALUES (
+										'$produto_id[$i]', 
+        								'$quantidade[$i]', 
+        								'$medidas[$i]', 
+        								'$data_validade[$i]', 
+        								'$nota_fiscal', 
+        								'$codigo', 
+        								'$fornecedor', 
+        								'$valor_nf', 
+        								'$sessao'
+									)");
+
+									/*$inseri -> bindValue(':id',$produto_id[$i]);
+									$inseri -> bindValue(':qtd',$quantidade[$i]);
+									$inseri -> bindValue(':med',$medidas[$i]);
+									$inseri -> bindValue(':val',$data_validade[$i]);
+									$inseri -> bindValue(':nf',$nota_fiscal);
+									$inseri -> bindValue(':cod',$codigo);
+									$inseri -> bindValue(':for',$fornecedor);
+									$inseri -> bindValue(':val_nf',$valor_nf);
+									$inseri -> bindValue(':ses',$sessao);*/
+									$inseri ->execute();
+
+
+
 							endfor;
-						endif;
+
+							if($inseri):
+								echo '<p class="alert-ok color-white">Cadastro feito com Sucesso</p>';
+							else:
+								echo '<p class="alert-erro color-white">Erro ao salvar dados</p>';
+							endif;
+						endif;	
 
 					endif;
 
