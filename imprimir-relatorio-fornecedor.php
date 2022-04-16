@@ -42,14 +42,14 @@
 			<article class="bgcolor-white extends more">
 				
 				
-
+ 
 				<?php
 
 				
-					$cliente = filter_input(INPUT_GET, 'ref');
+					$fornecedor = filter_input(INPUT_GET, 'ref');
 
 					$consulta = $pdo->prepare("SELECT * FROM tb_fornecedor WHERE id_fornecedor = :user");
-					$consulta -> bindValue(':user',$cliente);
+					$consulta -> bindValue(':user',$fornecedor);
 					$consulta->execute();
 
 					foreach($consulta as $mostra):

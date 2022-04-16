@@ -24,7 +24,7 @@
 		
 	</head>
 	
-	<body onload="window.print()"> 
+	<body onload="window.print()">
 
 	<main>
 		<section class="content_left">
@@ -41,46 +41,23 @@
 			
 			<article class="bgcolor-white extends more">
 				
-				
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">RELATÓRIO DE PREÇOS DE PRODUTOS CADASTRADOS NO SISTEMA </h1>
+
+				<div class="espaco-min"></div>
 
 				<?php
-
-				
-					$produto = filter_input(INPUT_GET, 'ref');
-
-					$consulta = $pdo->prepare("SELECT * FROM es_produto WHERE id_produto = :user");
-					$consulta -> bindValue(':user',$produto);
+					$consulta = $pdo->prepare("SELECT * FROM es_produto");
 					$consulta->execute();
 
 					foreach($consulta as $mostra):
 
 				?>
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">RELATÓRIO DO PRODUTO <?= strtoupper($mostra['nome_produto']) ?> NO SISTEMA</h1>
-				<div class="espaco-min"></div>
-				<div class="divisor color-dark info_dados">
 
-									
-					Preço: <b><?= $mostra['preco_produto']?></b><br>
-					Estoque: <b><?= $mostra['qtde_produto']?> UN</b><br>
-					Código de Barra: <b><?= $mostra['codigo_barra']?></b><br>
-					Fabricante: <b><?= $mostra['fabricante_produto']?></b><br>
-					Validade: <b><?= date('d/m/Y', strtotime($mostra['validade_produto']))?></b><br>
-					<?php if($mostra['status_produto'] == 1):?>
-						Status: <b>Ativo</b><br>
-					<?php else: ?>
-						Status: <b>Inativo</b><br>
-					<?php endif; ?>
+				<p class="font-weight-medium color-blue-dark space-left"><b><?= $mostra['nome_produto']?> - R$ <?= number_format($mostra['preco_produto'], 2,',','.')?> - <?= $mostra['qtde_produto']?> Unidades</b></p>
 
-					Data de Cadastro: <b><?= date('d/m/Y', strtotime($mostra['cadastro_produto']))?></b><br>
-
-					
-
-					<?php  
-
+				<?php  
 					endforeach;
-
-					
-					?>
+				?>
  	
 			</article>
 			
