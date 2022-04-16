@@ -28,59 +28,65 @@
 				<div class="espaco-min"></div>
 					<div class="divisor2"> 
 						<h1 class="bgcolor-blue-celestial color-white text-center">RELATÓRIO DE CLIENTES</h1>	
-						<img src="images/layout/usuario.png" title="Imagem de Representação: Relatório de Clientes" alt="Imagem de Representação: Relatório de Clientes">
+						<a href="relatorio-clientes" class="color-white"><img src="images/layout/rel-client.jpg" title="Imagem de Representação: Relatório de Clientes" alt="Imagem de Representação: Relatório de Clientes"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-clientes" class="color-white">Nova Consulta</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 					
 					<div class="divisor2"> 
 						<h1 class="link-bgcolor-green-dark color-white text-center">RELATÓRIO DE PRODUTOS</h1>	
-						<img src="images/layout/Produto.jpg" title="Imagem de Representação: Relatório de Produtos" alt="Imagem de Representação: Relatório de Produtos">
+						<a href="relatorio-produtos" class="color-white"><img src="images/layout/Produto.jpg" title="Imagem de Representação: Relatório de Produtos" alt="Imagem de Representação: Relatório de Produtos"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-produtos" class="color-white">Nova Pesquisa</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 
 					<div class="divisor2"> 
 						<h1 class="link-bgcolor-green-dark color-white text-center">RELATÓRIO DE FORNECEDORES</h1>	
-						<img src="images/layout/Produto.jpg" title="Imagem de Representação: Relatório de Fornecedores" alt="Imagem de Representação: Relatório de Fornecedores">
+						<a href="relatorio-fornecedores" class="color-white"><img src="images/layout/fornecedor.png" title="Imagem de Representação: Relatório de Fornecedores" alt="Imagem de Representação: Relatório de Fornecedores"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-fornecedores" class="color-white">Nova Pesquisa</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 
 					<div class="divisor2"> 
 						<h1 class="bgcolor-blue-celestial color-white text-center">RELATÓRIO DE PREÇOS</h1>	
-						<img src="images/layout/usuario.png" title="Imagem de Representação: Relatório de Preços" alt="Imagem de Representação: Relatório de Preços">
+						<a href="relatorio-precos" class="color-white" target="_blank"><img src="images/layout/rel-prec.jpeg" title="Imagem de Representação: Relatório de Preços" alt="Imagem de Representação: Relatório de Preços"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-precos" class="color-white" target="_blank">Nova Consulta</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 
+					<!--
 					<div class="divisor2"> 
 						<h1 class="bgcolor-red-light color-white text-center">RELATÓROIO DE PRODUTOS POR CLIENTES</h1>	
-						<img src="images/layout/Clientes.jpg" title="Imagem de Representação: Relatório de Produtos por Clientes" alt="Imagem de Representação: Relatório de Produtos por Clientes">
+						<a href="relatorio-produto-clientes" class="color-white"><img src="images/layout/Clientes.jpg" title="Imagem de Representação: Relatório de Produtos por Clientes" alt="Imagem de Representação: Relatório de Produtos por Clientes"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-produto-clientes" class="color-white">Nova Consulta</a></p>
 						<div class="espaco-normal"></div>
 					</div>
-
+					-->
+					
+					<!--
 					<div class="divisor2"> 
 						<h1 class="bgcolor-orange color-white text-center">RELATÓRIO DE PRODUTOS POR FORNECEDOR</h1>	
-						<img src="images/layout/fornecedor.png" title="Imagem de Representação: Relatório de Fornecedor" alt="Imagem de Representação: Relatório de Fornecedor">
+						<a href="relatorio-produtos-fornecedor" class="color-white"><img src="images/layout/fornecedor.png" title="Imagem de Representação: Relatório de Fornecedor" alt="Imagem de Representação: Relatório de Fornecedor"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-produtos-fornecedor" class="color-white">Nova Pesquisa</a></p>
 						<div class="espaco-normal"></div>
-					</div>	
+					</div>
+					-->	
 					
 					<div class="divisor2"> 
 						<h1 class="bgcolor-red-light color-white text-center">RELATÓROIO ESTOQUE</h1>	
-						<img src="images/layout/Clientes.jpg" title="Imagem de Representação: Relatório Estoque" alt="Imagem de Representação: Relatório de Produtos por Estoque">
+						<a href="imprimir-relatorio-estoque" class="color-white" target="_blank"><img src="images/layout/Produto.jpg" title="Imagem de Representação: Relatório Estoque" alt="Imagem de Representação: Relatório de Produtos por Estoque"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="imprimir-relatorio-estoque" class="color-white" target="_blank">Nova Consulta</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 						
-					<div class="divisor2"> 
+					<!--
+						<div class="divisor2"> 
 						<h1 class="bgcolor-orange color-white text-center">RELATÓRIO DE ACESSOS</h1>	
-						<img src="images/layout/fornecedor.png" title="Imagem de Representação: Relatório de Acessos" alt="Imagem de Representação: Relatório de Acessos">
+						<a href="relatorio-Acessos" class="color-white"><img src="images/layout/fornecedor.png" title="Imagem de Representação: Relatório de Acessos" alt="Imagem de Representação: Relatório de Acessos"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-Acessos" class="color-white">Nova Pesquisa</a></p>
 						<div class="espaco-normal"></div>
-					</div>	
+						</div>
+					-->	
 
 				<div class="espaco-min"></div>
 			</article>

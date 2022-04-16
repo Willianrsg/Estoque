@@ -29,25 +29,25 @@
 				<div class="espaco-min"></div>
 					<div class="divisor2"> 
 						<h1 class="bgcolor-blue-celestial color-white text-center">CADASTRO DE USUÁRIOS</h1>	
-						<img src="images/layout/usuario.png" title="Imagem de Representação: Cadastro de usuário" alt="Imagem de Representação: Cadastro de usuário">
+						<a href="cadastro-usuario" class="color-white"><img src="images/layout/usuario.png" title="Imagem de Representação: Cadastro de usuário" alt="Imagem de Representação: Cadastro de usuário"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="cadastro-usuario" class="color-white">Novo Usuário</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 					<div class="divisor2"> 
 						<h1 class="bgcolor-red-light color-white text-center">CADASTRO DE CLIENTES</h1>	
-						<img src="images/layout/Clientes.jpg" title="Imagem de Representação: Cadastro de Clientes" alt="Imagem de Representação: Cadastro de Clientes">
+						<a href="cadastro-clientes" class="color-white"><img src="images/layout/Clientes.jpg" title="Imagem de Representação: Cadastro de Clientes" alt="Imagem de Representação: Cadastro de Clientes"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="cadastro-clientes" class="color-white">Novo Cliente</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 					<div class="divisor2"> 
 						<h1 class="link-bgcolor-green-dark color-white text-center">CADASTRO DE PRODUTOS</h1>	
-						<img src="images/layout/Produto.jpg" title="Imagem de Representação: Cadastro de Produtos" alt="Imagem de Representação: Cadastro de Produtos">
+						<a href="cadastro-produtos" class="color-white"><img src="images/layout/Produto.jpg" title="Imagem de Representação: Cadastro de Produtos" alt="Imagem de Representação: Cadastro de Produtos"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="cadastro-produtos" class="color-white">Novo Produto</a></p>
 						<div class="espaco-normal"></div>
 					</div>	
 					<div class="divisor2"> 
 						<h1 class="bgcolor-orange color-white text-center">CADASTRO DE FORNECEDOR</h1>	
-						<img src="images/layout/fornecedor.png" title="Imagem de Representação: Cadastro de Fornecedor" alt="Imagem de Representação: Cadastro de Fornecedor">
+						<a href="cadastro-fornecedor" class="color-white"><img src="images/layout/fornecedor.png" title="Imagem de Representação: Cadastro de Fornecedor" alt="Imagem de Representação: Cadastro de Fornecedor"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="cadastro-fornecedor" class="color-white">Novo Fornecedor</a></p>
 						<div class="espaco-normal"></div>
 					</div>	

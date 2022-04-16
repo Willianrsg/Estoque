@@ -14,8 +14,8 @@ $affected_rows = mysqli_affected_rows($link);
     
 if($affected_rows > 0):
     echo '<script>alert("Produto alterado com sucesso!")</script>';
-    echo '<script>window.location="editar-usuarios"</script>';
+    echo '<script>window.location="editar-produtos"</script>';
 else:
     echo '<script>alert("Não foi possível alterar o produto, pois ocorreu um erro.")</script>';
-    echo '<script>window.location="altera-usuario"</script>';
+    echo '<script>window.location="editar-produtos"</script>';
 endif;

@@ -33,7 +33,7 @@
 				<div class="espaco-min"></div>
 				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do cliente que deseja editar</h3>
 				<form method="post" >
-					<input type="text" name="pesquisa" autocomplete="on" id="pesquisa" placeholder="Digite o nome do usuário para edição..."><br>
+					<input type="text" name="pesquisa" autocomplete="on" id="pesquisa" placeholder="Digite o nome do cliente para edição..."><br>
 					<button value="buscar" name="buscar" class="bgcolor-green-dark color-white">Buscar Cliente</button>
 
 					<script type="text/javascript">

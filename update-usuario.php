@@ -29,5 +29,5 @@ if($affected_rows > 0):
     echo '<script>window.location="editar-usuarios"</script>';
 else:
     echo '<script>alert("Não foi possível alterar o usuário, pois ocorreu um erro.")</script>';
-    echo '<script>window.location="altera-usuario"</script>';
+    echo '<script>window.location="editar-usuarios"</script>';
 endif;

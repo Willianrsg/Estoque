@@ -29,25 +29,25 @@
 				<div class="espaco-min"></div>
 					<div class="divisor2"> 
 						<h1 class="bgcolor-blue-celestial color-white text-center">EDITAR USUÁRIOS</h1>	
-						<img src="images/layout/usuario.png" title="Imagem de Representação: Editar de usuário" alt="Imagem de Representação: Editar de usuário">
+						<a href="editar-usuarios" class="color-white"><img src="images/layout/edit-user.jpg" title="Imagem de Representação: Editar de usuário" alt="Imagem de Representação: Editar de usuário"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="editar-usuarios" class="color-white">Editar Usuário</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 					<div class="divisor2"> 
 						<h1 class="bgcolor-red-light color-white text-center">EDITAR CLIENTES</h1>	
-						<img src="images/layout/Clientes.jpg" title="Imagem de Representação: Cadastro de Editar" alt="Imagem de Representação: Editar de Clientes">
+						<a href="editar-clientes" class="color-white"><img src="images/layout/edit-client.png" title="Imagem de Representação: Cadastro de Editar" alt="Imagem de Representação: Editar de Clientes"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="editar-clientes" class="color-white">Editar Cliente</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 					<div class="divisor2"> 
 						<h1 class="link-bgcolor-green-dark color-white text-center">EDITAR PRODUTOS</h1>	
-						<img src="images/layout/Produto.jpg" title="Imagem de Representação: Editar de Produtos" alt="Imagem de Representação: Editar de Produtos">
+						<a href="editar-produtos" class="color-white"><img src="images/layout/Produto.jpg" title="Imagem de Representação: Editar de Produtos" alt="Imagem de Representação: Editar de Produtos"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="editar-produtos" class="color-white">Editar Produto</a></p>
 						<div class="espaco-normal"></div>
 					</div>	
 					<div class="divisor2"> 
 						<h1 class="bgcolor-orange color-white text-center">EDITAR FORNECEDOR</h1>	
-						<img src="images/layout/fornecedor.png" title="Imagem de Representação: Editar de Fornecedor" alt="Imagem de Representação: Editar de Fornecedor">
+						<a href="editar-fornecedor" class="color-white"><img src="images/layout/fornecedor.png" title="Imagem de Representação: Editar de Fornecedor" alt="Imagem de Representação: Editar de Fornecedor"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="editar-fornecedor" class="color-white">Editar Fornecedor</a></p>
 						<div class="espaco-normal"></div>
 					</div>	

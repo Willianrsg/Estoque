@@ -29,25 +29,25 @@
 				<div class="espaco-min"></div>
 					<div class="divisor2"> 
 						<h1 class="bgcolor-blue-celestial color-white text-center">EXCLUIR USUÁRIOS</h1>	
-						<img src="images/layout/usuario.png" title="Imagem de Representação: Excuir de usuário" alt="Imagem de Representação: Excuir de usuário">
+						<a href="excluir-usuarios" class="color-white"><img src="images/layout/exc-user.jpg" title="Imagem de Representação: Excuir de usuário" alt="Imagem de Representação: Excuir de usuário"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="excluir-usuarios" class="color-white">Excuir Usuário</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 					<div class="divisor2"> 
 						<h1 class="bgcolor-red-light color-white text-center">EXCLUIR CLIENTES</h1>	
-						<img src="images/layout/Clientes.jpg" title="Imagem de Representação: Excuir de Editar" alt="Imagem de Representação: Excuir de Clientes">
+						<a href="excluir-clientes" class="color-white"><img src="images/layout/exc-client.jpg" title="Imagem de Representação: Excuir de Editar" alt="Imagem de Representação: Excuir de Clientes"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="excluir-clientes" class="color-white">Excuir Cliente</a></p>
 						<div class="espaco-normal"></div>
 					</div>
 					<div class="divisor2"> 
 						<h1 class="link-bgcolor-green-dark color-white text-center">EXCLUIR PRODUTOS</h1>	
-						<img src="images/layout/Produto.jpg" title="Imagem de Representação: Excuir de Produtos" alt="Imagem de Representação: Excuir de Produtos">
+						<a href="excluir-produtos" class="color-white"><img src="images/layout/exc-prod.jpg" title="Imagem de Representação: Excuir de Produtos" alt="Imagem de Representação: Excuir de Produtos"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="excluir-produtos" class="color-white">Excuir Produto</a></p>
 						<div class="espaco-normal"></div>
 					</div>	
 					<div class="divisor2"> 
 						<h1 class="bgcolor-orange color-white text-center">EXCLUIR FORNECEDOR</h1>	
-						<img src="images/layout/fornecedor.png" title="Imagem de Representação: Excuir de Fornecedor" alt="Imagem de Representação: Excuir de Fornecedor">
+						<a href="excluir-fornecedor" class="color-white"><img src="images/layout/exc-forne.jpg" title="Imagem de Representação: Excuir de Fornecedor" alt="Imagem de Representação: Excuir de Fornecedor"></a>
 						<p class="text-center link-bgcolor-dark-b"><a href="excluir-fornecedor" class="color-white">Excuir Fornecedor</a></p>
 						<div class="espaco-normal"></div>
 					</div>	

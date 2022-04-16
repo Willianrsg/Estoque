@@ -29,11 +29,11 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">GERENCIAR EDIÇÃO DO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">GERENCIAR EXCLUSÃO NO SISTEMA <?= strtoupper(TITLE) ?></h1>
 				<div class="espaco-min"></div>
-				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do produto que deseja editar</h3>
+				<h3 class="font-text-light-extra text-center font-weight-medium color-red-light space-letter">Digite o nome do produto que deseja excluir</h3>
 				<form method="post">
-					<input type="text" name="pesquisa" autocomplete="on" id="pesquisa" placeholder="Digite o nome do usuário para edição..."><br>
+					<input type="text" name="pesquisa" autocomplete="on" id="pesquisa" placeholder="Digite o nome do produto para exclusão..."><br>
 					<button value="buscar" name="buscar" class="bgcolor-green-dark color-white">Buscar Produto</button>
 
 					<script type="text/javascript">

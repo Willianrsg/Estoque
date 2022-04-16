@@ -35,7 +35,7 @@
 			<div class="espaco-min"></div>
 			
 			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">CADASTRAR PRODUTO NO SISTEMA <?= strtoupper(TITLE) ?></h1>
+				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">ALTERAR DADOS DO PRODUTO NO SISTEMA <?= strtoupper(TITLE) ?></h1>
 				<div class="espaco-min"></div>
 
 				<?php
