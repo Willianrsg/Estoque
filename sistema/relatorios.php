@@ -78,14 +78,14 @@
 						<div class="espaco-normal"></div>
 					</div>
 						
-					<!--
+					
 						<div class="divisor2"> 
 						<h1 class="bgcolor-orange color-white text-center">RELATÓRIO DE ACESSOS</h1>	
-						<a href="relatorio-Acessos" class="color-white"><img src="images/layout/fornecedor.png" title="Imagem de Representação: Relatório de Acessos" alt="Imagem de Representação: Relatório de Acessos"></a>
-						<p class="text-center link-bgcolor-dark-b"><a href="relatorio-Acessos" class="color-white">Nova Pesquisa</a></p>
+						<a href="imprimir-relatorio-acessos" class="color-white" target="_blank"><img src="images/layout/rel-aces.png" title="Imagem de Representação: Relatório de Acessos" alt="Imagem de Representação: Relatório de Acessos"></a>
+						<p class="text-center link-bgcolor-dark-b"><a href="imprimir-relatorio-acessos" class="color-white" target="_blank">Nova Pesquisa</a></p>
 						<div class="espaco-normal"></div>
 						</div>
-					-->	
+						
 
 				<div class="espaco-min"></div>
 			</article>
