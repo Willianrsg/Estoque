@@ -1,0 +1,80 @@
+CREATE TABLE `es_produto` (
+ `id_produto` int(11) NOT NULL AUTO_INCREMENT,
+ `nome_produto` varchar(500) NOT NULL,
+ `preco_produto` decimal(10,2) NOT NULL,
+ `qtde_produto` int(11) NOT NULL,
+ `descricao_produto` varchar(255) NOT NULL,
+ `codigo_barra` int(11) NOT NULL,
+ `fabricante_produto` varchar(255) NOT NULL,
+ `validade_produto` date DEFAULT NULL,
+ `status_produto` int(11) NOT NULL,
+ `cadastro_produto` datetime NOT NULL,
+ `sessao_produto` varchar(500) NOT NULL,
+ PRIMARY KEY (`id_produto`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `tb_categoria` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `nome_categoria` varchar(250) NOT NULL,
+ `cadastro_categoria` datetime NOT NULL,
+ `sessao_categoria` varchar(500) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8
+
+CREATE TABLE `tb_cliente` (
+ `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
+ `nome_cliente` varchar(500) NOT NULL,
+ `email_cliente` varchar(500) NOT NULL,
+ `endereco_cliente` varchar(600) NOT NULL,
+ `cep_cliente` varchar(50) NOT NULL,
+ `cidade_cliente` varchar(255) NOT NULL,
+ `estado_cliente` varchar(255) NOT NULL,
+ `cpf_cliente` varchar(16) NOT NULL,
+ `telefone_cliente` varchar(18) DEFAULT NULL,
+ `token_cliente` int(11) NOT NULL,
+ `status_cliente` int(11) NOT NULL,
+ `cadastro_cliente` datetime NOT NULL,
+ `sessao_cliente` varchar(500) NOT NULL,
+ PRIMARY KEY (`id_cliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8
+
+CREATE TABLE `tb_fornecedor` (
+ `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT,
+ `nome_fornecedor` varchar(500) NOT NULL,
+ `email_fornecedor` varchar(500) NOT NULL,
+ `endereco_fornecedor` varchar(600) NOT NULL,
+ `cep_fornecedor` varchar(50) NOT NULL,
+ `cidade_fornecedor` varchar(255) NOT NULL,
+ `estado_fornecedor` varchar(255) NOT NULL,
+ `cnpj_fornecedor` varchar(18) NOT NULL,
+ `telefone_fornecedor` varchar(18) DEFAULT NULL,
+ `token_fornecedor` int(11) NOT NULL,
+ `status_fornecedor` int(11) NOT NULL,
+ `cadastro_fornecedor` datetime NOT NULL,
+ `sessao_fornecedor` varchar(500) NOT NULL,
+ PRIMARY KEY (`id_fornecedor`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8
+
+CREATE TABLE `tb_registros_acessos` (
+ `registros_id` int(11) NOT NULL AUTO_INCREMENT,
+ `registros_nome` varchar(500) NOT NULL,
+ `registros_entrada` datetime NOT NULL,
+ `registros_saida` datetime NOT NULL,
+ `registros_pagina` varchar(500) NOT NULL,
+ `registros_status` int(11) NOT NULL,
+ PRIMARY KEY (`registros_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8
+
+CREATE TABLE `tb_usuario` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `nome_usuario` varchar(250) NOT NULL,
+ `login_usuario` varchar(40) NOT NULL,
+ `senha_usuario` varchar(40) NOT NULL,
+ `status_usuario` int(11) DEFAULT NULL,
+ `nivel` int(11) NOT NULL,
+ `token` int(11) NOT NULL,
+ `cadastro_usuario` datetime NOT NULL,
+ `sessao_usuario` varchar(500) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8
