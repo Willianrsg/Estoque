@@ -1,5 +1,7 @@
 <?php 
 include '../includes/sessoes.php';
+$pages = 'editar-fornecedor.php';
+sessao_nivel_dez();
 ?>
 <!doctype html>
 <html lang="pt-br">

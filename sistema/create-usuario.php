@@ -3,7 +3,7 @@ include '../includes/sessoes.php';
 
 $nome_usuario       = filter_input(INPUT_POST, 'nome_usuario', FILTER_SANITIZE_SPECIAL_CHARS);
 $login_usuario      = filter_input(INPUT_POST, 'login_usuario', FILTER_SANITIZE_SPECIAL_CHARS);
-$senha_usuario      = filter_input(INPUT_POST, 'senha_usuario');
+$senha_usuario      = md5(filter_input(INPUT_POST, 'senha_usuario'));
 $nivel              = filter_input(INPUT_POST, 'nivel', FILTER_SANITIZE_NUMBER_INT);
 $token              = rand(1000, 1000000);
 $cadastro_usuario   = date('Y-m-d H:i:s');

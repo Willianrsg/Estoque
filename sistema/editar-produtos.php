@@ -1,5 +1,7 @@
 <?php 
 	include '../includes/sessoes.php';
+	$pages = 'editar-produtos.php';
+	sessao_nivel_dez();
 ?>
 <!doctype html>
 <html lang="pt-br">

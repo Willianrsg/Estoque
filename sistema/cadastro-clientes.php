@@ -1,5 +1,7 @@
 <?php 
 	include '../includes/sessoes.php';
+	$pages = 'cadastro-clientes.php';
+
 ?>
 <!doctype html>
 <html lang="pt-br">

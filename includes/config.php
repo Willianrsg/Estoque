@@ -37,20 +37,20 @@ define('MAILPORT', 000);
 define ('DB_USUARIOS','tb_usuario');
 define ('DB_CLIENTE','tb_cliente');
 define ('DB_FORNECEDORES','tb_fornecedor');
-define ('DB_REGISTROS','si_registros_acessos');
+define ('DB_REGISTROS','tb_registros_acessos');
 define ('DB_PRODUTOS','es_produto');
 define ('DB_CATEGORIA','tb_categorias');
 define ('DB_ENTRADA','tb_entrada');
 define ('DB_SAIDA','tb_saida');
 define ('DB_DEVOLUCAO','tb_devolucao');
-define ('DB_ORDEM_SERVICO','si_ordem_servico');
-define ('DB_PEDIDO_MATERIAL','si_pedido_material');
+//define ('DB_ORDEM_SERVICO','si_ordem_servico');
+//define ('DB_PEDIDO_MATERIAL','si_pedido_material');
 
 /*APPS*/
-define ('APP_PEDIDO_VIA_EMAIL', 1);  // 0<-- desabilita o APP   1-> Habilita o APP
-define ('APP_PEDIDO_VIA_SISTEMA', 1);  // 0<-- desabilita o APP   1-> Habilita o APP
-define ('APP_PRODUTOS_SEM_ESTOQUE', 1);  // 0<-- desabilita o APP   1-> Habilita o APP
-define ('APP_ESTOQUE', 10);  // <-- Quantidade miníma de produtos, informando escassez do mesmo.
+//define ('APP_PEDIDO_VIA_EMAIL', 1);  // 0<-- desabilita o APP   1-> Habilita o APP
+//define ('APP_PEDIDO_VIA_SISTEMA', 1);  // 0<-- desabilita o APP   1-> Habilita o APP
+//define ('APP_PRODUTOS_SEM_ESTOQUE', 1);  // 0<-- desabilita o APP   1-> Habilita o APP
+//define ('APP_ESTOQUE', 10);  // <-- Quantidade miníma de produtos, informando escassez do mesmo.
 
 function site_inativo(){
 	echo '
@@ -63,7 +63,7 @@ function site_inativo(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.png" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }
@@ -79,7 +79,7 @@ function site_manutencao(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.png" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }
@@ -95,7 +95,7 @@ function tema_erro(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.png" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }
@@ -105,16 +105,18 @@ function sessao_existe(){
 		session_destroy;
 		echo '<script>window.location="../index.php"</script>';
 	endif;
-}
-
-function sessao_nivel(){
-	if($_SESSION['nivel'] < 9):
+} 
+ 
+function sessao_nivel_dez(){
+	if($_SESSION['nivel'] < 2):
 		echo '<script>window.location="../sistema/dashboard"</script>';
 	endif;
 }
 
-function sessao_nivel_dois(){
-	if($_SESSION['nivel'] < 8):
+
+
+function sessao_nivel(){
+	if($_SESSION['nivel'] = 2):
 		echo '<script>window.location="../sistema/dashboard"</script>';
 	endif;
 }
@@ -130,7 +132,7 @@ function erro_quinhetos(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.png" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }
@@ -146,7 +148,7 @@ function erro_quatrozeroquatro(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.png" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }
@@ -162,7 +164,7 @@ function erro_quatrozerotres(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.png" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }
@@ -178,7 +180,7 @@ function erro_quatrozerozero(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.png" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }
@@ -194,7 +196,7 @@ function erro_quatrozeroum(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.png" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }

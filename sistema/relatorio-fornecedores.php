@@ -1,5 +1,6 @@
 <?php 
 	include '../includes/sessoes.php';
+	$pages = 'relatorio-fornecedores.php';
 ?>
 <!doctype html>
 <html lang="pt-br">

@@ -1,5 +1,6 @@
 <?php 
 	include '../includes/sessoes.php';
+	$pages = 'nova-categoria.php';
 ?>
 <!doctype html>
 <html lang="pt-br">

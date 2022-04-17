@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require 'includes/conexao.php';
+	require 'includes/conexao2.php';
 	require 'includes/config.php';
 	
 	sessao_existe();
@@ -17,7 +17,7 @@
 	$inseri -> execute();
 	
 	if($inseri):
-		echo '<script>window.location="admin/dashboard.php"</script>';
+		echo '<script>window.location="sistema/dashboard.php"</script>';
 	else:
 		session_destroy();
 		echo '<script>window.location="index.php"</script>';

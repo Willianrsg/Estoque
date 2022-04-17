@@ -1,5 +1,7 @@
 <?php 
 	include '../includes/sessoes.php';
+	$pages = 'cadastro-produtos.php';
+	
 ?>
 <!doctype html>
 <html lang="pt-br">

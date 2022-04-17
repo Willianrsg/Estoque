@@ -30,13 +30,13 @@
 					if(empty($email)):
 						echo '<p class="color-white alert-error">Digite o seu e-mail cadastrado acima!</p>';
 					else:
-						$consulta = $pdo->prepare("SELECT * FROM ".DB_USUARIOS." WHERE usuarios_email = :email");
+						$consulta = $pdo->prepare("SELECT * FROM ".DB_USUARIOS." WHERE login_usuario = :email");
 						$consulta -> bindValue(':email', $email);
 						$consulta -> execute();
 						
 						foreach($consulta as $mostra):
 							$token = strip_tags($mostra['token']);
-							$nome = strip_tags($mostra['usuarios_nome']);
+							$nome = strip_tags($mostra['nome_usuario']);
 						endforeach;
 						require 'includes/enviar-email.php';
 					endif;

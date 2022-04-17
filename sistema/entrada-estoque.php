@@ -1,5 +1,6 @@
 <?php 
 include '../includes/sessoes.php';
+$pages = 'entrada-estoque.php';
 ?>
 <!doctype html>
 	<html lang="pt-br">

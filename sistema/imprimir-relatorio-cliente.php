@@ -1,5 +1,6 @@
 <?php 
 include '../includes/sessoes.php';
+$pages = 'imprimir-relatorio-cliente.php';
 ?>
 <!doctype html>
 	<html lang="pt-br">

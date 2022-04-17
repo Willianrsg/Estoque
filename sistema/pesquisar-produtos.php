@@ -1,5 +1,6 @@
 <?php 
 	include '../includes/sessoes.php';
+	$pages = 'pesquisar-produtos.php';
 ?>
 <!doctype html>
 <html lang="pt-br">

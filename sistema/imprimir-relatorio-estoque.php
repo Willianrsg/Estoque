@@ -1,5 +1,6 @@
 <?php 
 	include '../includes/sessoes.php';
+	$pages = 'imprimir-relatorio-estoque.php';
 ?>
 <!doctype html>
 	<html lang="pt-br">

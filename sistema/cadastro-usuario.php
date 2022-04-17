@@ -1,5 +1,7 @@
 <?php 
 include '../includes/sessoes.php';
+$pages = 'cadastro-usuario.php';
+
 ?>
 <!doctype html>
 	<html lang="pt-br">
@@ -52,10 +54,10 @@ include '../includes/sessoes.php';
 						<label for="categoria">Nível de Acesso</label><br>
 						<select name="nivel" required>
 							<option value="1">Usuário Administrativo</option>
-							<option value="2">Usuário Estoquista</option>
-							<option value="9">Administrador</option>
-							<option value="10">Super Administrador</option>
-						</select><br><br>
+							<!--<option value="2">Usuário Estoquista</option>
+							<option value="9">Administrador</option>-->
+							<option value="10">Administrador</option>
+						</select><br><br> 
 
 						<button name="cadastro_usuario"class="link-bgcolor-green-dark-b color-white">Finalizar Cadastro</button>
 					</form>
