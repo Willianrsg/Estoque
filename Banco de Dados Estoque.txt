@@ -1,3 +1,6 @@
+CREATE DATABASE estoque;
+
+
 CREATE TABLE `es_produto` (
  `id_produto` int(11) NOT NULL AUTO_INCREMENT,
  `nome_produto` varchar(500) NOT NULL,
