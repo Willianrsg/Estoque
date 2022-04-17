@@ -1,113 +1,107 @@
-<?php 
+<?php
 	session_start();
-	$_SESSION['usuario'] = 'Willian Rafael';
-	require "includes/config.php";
+	require 'includes/conexao.php';
+	require 'includes/config.php';
 ?>
 <!doctype html>
+
 <html lang="pt-br">
-	<head> 
+	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title>Sistema Estoque</title>
-		<link rel="stylesheet" href="css/framework.css">
+		<title><?= TITLE ?></title>
 		<link rel="stylesheet" href="css/estilo.css">
-		<!-- Adicionando JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"></script>
-		<!--Validação de senha-->
-					
-					<script type="text/javascript">
-						function validar(){
-							var senha = formuser.senha_usuario.value;
-							var confirma_senha = formuser.confirma_senha.value;
-
-							if(senha == "" || senha.length <= 6){
-								alert('Preencha o campo senha com no mínimo 6 caracteres');
-								formuser.senha_usuario.focus();
-								return false;
-							}
-
-							if(confirma_senha == "" || confirma_senha.length <= 6){
-								alert('Preencha o campo confirma senha com no mínimo 6 caracteres');
-								formuser.confirma_senha.focus();
-								return false;
-							}
-
-							if(senha != confirma_senha){
-								alert('Senhas diferentes');
-								formuser.confirma_senha.focus();
-								return false;
-							}
-						}
-					</script>
-		
+		<link rel="stylesheet" href="css/framework.css">
 	</head>
 	
 	<body>
-	<!-- Chama o cabeçalho da página-->
-	<?php require 'includes/header.php';?>
-	
-	<main>
-		<section class="content_left">
-			<h1 class="fontzero">Conteúdo de Principal</h1>
-
-			<?php
-                if (isset($_SESSION['msg'])):
-                    echo $_SESSION['msg'];
-                    session_unset();
-                endif;
-            ?>
+		<section>
+		<article  class="bgcolor-white">
+		<form method="post">
+			<h1 class="font-text-hard-two text-center color-dark">Cadastrar Usuário:</h1><br>
+			<label for="usuario">Nome do Usuário</label><br>
+			<input type="text" name="usuario" placeholder="Digite o seu nome completo..." required  class="font-text-light-extra text-left color-dark bgcolor-white-dark ">
+			<br><br>
+			<label for="email">Seu E-mail</label><br>
+			<input type="email" name="email" placeholder="Digite o seu melhor e-mail..." required  class="font-text-light-extra text-left color-dark bgcolor-white-dark ">
+			<br><br>
+			<label for="pass">Sua Senha</label><br>
+			<input type="password" name="pass" placeholder="Digite a sua senha..." required  class="font-text-light-extra text-left color-dark bgcolor-white-dark ">
+			<br><br>
+			<label for="nivel">Nível do Usuário</label><br>
+			<select name="nivel"required  class="font-text-light-extra text-left color-dark bgcolor-white-dark ">
+				<option value="<?= NIVEL_USER; ?>">Usuário</option>
+				<option value="<?= NIVEL_OP; ?>">Operador</option>
+				<option value="<?= NIVEL_ADM; ?>">Administrador</option>
+			</select>
+			<br><br>
+			<label for="pergunta">Digite uma Pergunta Secreta</label><br>
+			<input type="text" name="pergunta" placeholder="Digite uma pergunta secreta..." required  class="font-text-light-extra text-left color-dark bgcolor-white-dark ">
+			<br><br>
 			
-			<div class="espaco-min"></div>
+			<label for="resposta">Resposta da Pergunta Secreta</label><br>
+			<input type="text" name="resposta" placeholder="Digite a sua resposta para a pergunta secreta..." required  class="font-text-light-extra text-left color-dark bgcolor-white-dark ">
+			<br><br>
 			
-			<article class="bgcolor-white extends more">
-				<h1 class="font-text-hard-two text-center font-weight-heavy bgcolor-dark color-white">CADASTRAR USUÁIO NO SISTEMA <?= strtoupper(TITLE) ?></h1>
+			<button name="cadastrar" value="cadastrar" class="font-text-light-extra text-left color-dark bgcolor-white-dark ">Cadastrar Usuário!</button>
+		</form>
+		<?php
+			if(isset($_POST['cadastrar'])):
+				$usuario = strip_tags(filter_input(INPUT_POST, 'usuario'));
+				$email = strip_tags(filter_input(INPUT_POST, 'email'));
+				$pass = strip_tags(filter_input(INPUT_POST, 'pass'));
+				$senha = md5($pass);
+				$nivel = strip_tags(filter_input(INPUT_POST, 'nivel'));
+				$pergunta = strip_tags(filter_input(INPUT_POST, 'pergunta'));
+				$respostas = strip_tags(filter_input(INPUT_POST, 'resposta'));
+				$resposta = md5($respostas);
+				$data = date('Y-m-d H:i:s');
+				$token = rand(100, 1000000);
+				$status = 1;
+				if(empty($senha) || empty($usuario) || empty($email) || empty($nivel) || empty($pergunta) || empty($resposta)):
+					echo '<p class="alert-error color-white">Preencha todos os campos do formulário acima!</p>';
+				else:
+					$consultar = $pdo->prepare("SELECT * FROM ".DB_USUARIOS." WHERE usuarios_nome = :nome OR usuarios_email = :email ORDER BY usuarios_id DESC");
+					$consultar -> bindValue(':nome', $usuario);
+					$consultar -> bindValue(':email', $email);
+					$consultar -> execute();
 
-				<div class="espaco-min"></div>
-
-				<form action="create-usuario.php" method="post" name="formuser">
+					$linha = $consultar -> rowCount(); 
 					
-					<label for="nome">Nome</label><br>
-					<input type="text" name="nome_usuario" required><br><br>
-
-					<label for="login">Login</label><br>
-					<input type="text" name="login_usuario" required><br><br>
-
-					<label for="Senha">Senha: </label><br>
-					<input type="password" name="senha_usuario" required><br><br>
-
-					<label for="quantidade">Confirme sua senha:</label><br>
-					<input type="password" name="confirma_senha" required><br><br>
-
-					<label for="categoria">Nível de Acesso</label><br>
-					<select name="nivel" required>
-						<option value="1">Usuário Administrativo</option>
-						<option value="2">Usuário Estoquista</option>
-						<option value="9">Administrador</option>
-						<option value="10">Super Administrador</option>
-					</select><br><br>
-
-					<button name="cadastro_usuario"class="link-bgcolor-green-dark-b color-white">Finalizar Cadastro</button>
-
-
-					
-
-				</form>
-					
+					if($linha == 1):
+						echo '<p class="alert-error color-white">Já existe um usuário ou e-mali cadastrado. Insira um e-mail e o nome de usuário diferente!</p>';
+					else:
+						$consultare = $pdo->prepare("SELECT * FROM ".DB_BLACKLIST." WHERE blacklist_senha = :pa");
+						$consultare -> bindValue(':pa', $senha);
+						$consultare -> execute();
 						
-
-				<div class="espaco-min"></div>
-			</article>
-			
-			<div class="espaco-min"></div>
-		</section>
-		
-	<div class="clear"></div>
-	</main>
-	
-	<!-- Chama o rodapé da página-->
-	<?php require 'includes/footer.php';?>
-	<script type="js/jquery.js"></script>
+						$linha_bd = $consultare -> rowCount();
+						if($linha_bd >= 1):
+							echo '<p class="alert-error color-white">Sua senha é muito fraca, tente combinar símbolos, números e caracteres!</p>';
+						else:
+						$inseri = $pdo->prepare("INSERT INTO ".DB_USUARIOS." (usuarios_nome, usuarios_email, usuarios_senha, usuarios_status, usuarios_nivel, usuarios_data, token, pergunta_secreta, resposta_secreta) VALUES (:nome, :email, :senha, :status, :nivel, :data, :token, :pergunta, :resposta)");
+						$inseri -> bindValue(":nome", $usuario);
+						$inseri -> bindValue(":email", $email);
+						$inseri -> bindValue(":senha", $senha);
+						$inseri -> bindValue(":status", $status);
+						$inseri -> bindValue(":nivel", $nivel);
+						$inseri -> bindValue(":data", $data);
+						$inseri -> bindValue(":token", $token);
+						$inseri -> bindValue(":pergunta", $pergunta);
+						$inseri -> bindValue(":resposta", $resposta);
+						
+						$inseri -> execute();
+						
+						if($inseri):
+							echo '<script>alert("O usuário foi cadastrado com sucesso!")</script>';
+						else:
+							echo '<p class="alert-error color-white">OCORREU UM ERRO: Por favor, redigir novamente o formulário de cadastro!</p>';
+						endif;
+						endif;
+					endif;
+					endif;
+				endif;
+		?>
+		</article>
+		<section>
 	</body>
 </html>
