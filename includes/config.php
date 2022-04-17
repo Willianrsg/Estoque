@@ -102,14 +102,16 @@ function tema_erro(){
 
 function sessao_existe(){
 	if(!isset($_SESSION['logado'])):
-		session_destroy;
+		//session_destroy;
+		unset($_SESSION['logado']);
 		echo '<script>window.location="../index.php"</script>';
 	endif;
 } 
  
 function sessao_nivel_dez(){
 	if($_SESSION['nivel'] < 2):
-		echo '<script>window.location="../sistema/dashboard"</script>';
+		echo '<script>alert("Usuário sem permissão de acesso!")</script>';
+    	echo '<script>window.location="../sistema/dashboard"</script>';
 	endif;
 }
 
