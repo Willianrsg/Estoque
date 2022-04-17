@@ -29,7 +29,7 @@
 
 			<button name="entrar" value="entrar" class="font-text-light-extra text-left color-dark bgcolor-white-dark ">Entrar!</button>
 			
-			<!--<a href="esqueceu-senha.php" class="color-dark font-weight-heavy">Esqueceu a Senha?</a>-->
+			<a href="cadastro-usuario.php" class="color-dark font-weight-heavy">Cadastrar</a>
 
 		</form>
 		<?php

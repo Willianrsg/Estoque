@@ -1,6 +1,6 @@
 <?php 
 include '../includes/sessoes.php';
-$pages = 'cadastro-usuario.php';
+//$pages = 'cadastro-usuario.php';
 
 ?>
 <!doctype html>

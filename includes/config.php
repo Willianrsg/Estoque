@@ -40,9 +40,9 @@ define ('DB_FORNECEDORES','tb_fornecedor');
 define ('DB_REGISTROS','tb_registros_acessos');
 define ('DB_PRODUTOS','es_produto');
 define ('DB_CATEGORIA','tb_categorias');
-define ('DB_ENTRADA','tb_entrada');
-define ('DB_SAIDA','tb_saida');
-define ('DB_DEVOLUCAO','tb_devolucao');
+//define ('DB_ENTRADA','tb_entrada');
+//define ('DB_SAIDA','tb_saida');
+//define ('DB_DEVOLUCAO','tb_devolucao');
 //define ('DB_ORDEM_SERVICO','si_ordem_servico');
 //define ('DB_PEDIDO_MATERIAL','si_pedido_material');
 
@@ -182,7 +182,7 @@ function erro_quatrozerozero(){
 		<h1 class="font-text-light-middle">Entre em Contato Conosco:</h1><br>
 		<p class="font-weight-heavy font-text-light">Telefone: '.TELEFONESITE.' </p>
 		<p class="font-weight-heavy font-text-light">E-mail: '.EMAILSITE.' </p><br><br>
-		<img src="'.URL.'images/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
+		<img src="'.URL.'images/layout/logo.jpeg" alt="Logo do Estoque" title="Ir para a Página Inicial">
 	</section>
 	';
 }
